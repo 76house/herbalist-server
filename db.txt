@@ -1,0 +1,1 @@
+development - sqlite3 (admin: bozka, pwd: kozka)
