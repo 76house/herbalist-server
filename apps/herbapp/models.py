@@ -317,6 +317,7 @@ class Herb(models.Model):
     branching       = models.IntegerField(choices = BRANCHING_CHOICES, default=0, verbose_name=_('Ast branching'))
     bark_type       = models.IntegerField(choices = BARK_CHOICES, default=0, verbose_name=_('Bark type'))
     bark_type_alt   = models.IntegerField(choices = BARK_CHOICES, default=0, verbose_name=_('Bark type (alt.)'))
+
     fruit_type      = models.IntegerField(choices = FRUIT_CHOICES, default=0, verbose_name=_('Fruit type'))
     fruit_from      = models.IntegerField(choices = MONTH_CHOICES, default=0, verbose_name=_('Fruit from'))
     fruit_to        = models.IntegerField(choices = MONTH_CHOICES, default=0, verbose_name=_('Fruit to'))
@@ -327,10 +328,11 @@ class Herb(models.Model):
         verbose_name = _('Herb')
         verbose_name_plural = _('Herbs')
         ordering = [_('name_en')]
-
+        
     def __unicode__(self):
         return "%s" % self.name
-        
+
+    # picture thumbnails in admin list view        
     def picture_thumbnails(self):
         html = ''
         pictures = HerbPicture.objects.filter(herb_id=self._id)
@@ -344,17 +346,31 @@ class Herb(models.Model):
     picture_thumbnails.short_description = _('Pictures')
     picture_thumbnails.allow_tags = True
 
+    # displays a bullet if Czech texts are complete
     def has_language_cs(self):
-        return self.name_cs != "" and self.alias_cs != "" and self.family_cs != "" and self.description_cs != ""
+        if (self.name_cs != "" and self.alias_cs != "" and self.family_cs != "" and self.description_cs != ""):
+            return '<span style="font-size: 16pt;">&bull;</span>'
+        else:
+            return ""
 
+    # displays a bullet if English texts are complete
     def has_language_en(self):
-        return self.name_en != "" and self.alias_en != "" and self.family_en != "" and self.description_en != ""
+        if (self.name_en != "" and self.alias_en != "" and self.family_en != "" and self.description_en != ""):
+            return '<span style="font-size: 16pt;">&bull;</span>'
+        else:
+            return ""
+
+    has_language_cs.short_description = 'CZ'
+    has_language_en.short_description = 'EN'
+    has_language_cs.allow_tags = True
+    has_language_en.allow_tags = True
 
 
 # ------------------------------------------------------------------------------
 # HerbPicture model - images assigned to certain herb
 #
 
+# full path to /media/herbres
 def picture_get_upload_path(instance, name):
     return instance._uploadname
 
@@ -411,7 +427,7 @@ class HerbPicture(models.Model):
         filepath, filename = os.path.split(self.picture.url)
         basename, ext = os.path.splitext(filename)
         ext = ext.lower()
-        self._uploadname = '%s/herbres/%s%s' % (settings.MEDIA_ROOT, self.name, ext)
+        self._uploadname = os.path.join(settings.MEDIA_ROOT, 'herbres', "%s%s" % (self.name, ext))
         filepath, filename = os.path.split(self._uploadname)
         
         try:
@@ -464,11 +480,6 @@ class HerbPicture(models.Model):
             mirror = im
 
         ratio = mirror.size[1] / (float)(mirror.size[0])
-
-#        if ext.lower() == '.jpg':
-#            mirror.save(filename, "JPEG", quality = 95)
-#        else:
-#            mirror.save(filename)
 
         for width in self.PICTURE_WIDTHS:
             thumb = mirror.copy()
