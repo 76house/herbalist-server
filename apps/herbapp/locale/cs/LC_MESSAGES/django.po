@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Herbalist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2013-01-20 22:54+0100\n"
+"POT-Creation-Date: 2013-01-23 01:47+0100\n"
 "PO-Revision-Date: 2013-01-20 22:54+0100\n"
 "Last-Translator: Martin Marek <martin.marek@carabana.cz>\n"
 "Language-Team: Herbalist team\n"
@@ -19,10 +19,13 @@ msgstr ""
 "X-Poedit-Language: Czech\n"
 "X-Poedit-SourceCharset: utf-8\n"
 
-#: admin.py:36
-#: models.py:324
+#: admin.py:36 models.py:324
 msgid "Environment"
 msgstr "Prostředí"
+
+#: admin.py:62 models.py:329
+msgid "name_en"
+msgstr "name_cs"
 
 #: models.py:62
 msgid "Order"
@@ -68,9 +71,7 @@ msgstr "Nákupy"
 msgid "Name"
 msgstr "Jméno"
 
-#: models.py:90
-#: models.py:277
-#: models.py:359
+#: models.py:90 models.py:277 models.py:370
 msgid "Author"
 msgstr "Autor"
 
@@ -86,8 +87,7 @@ msgstr "Jméno (EN)"
 msgid "Name (CS)"
 msgstr "Jméno (CZ)"
 
-#: models.py:111
-#: models.py:495
+#: models.py:111 models.py:518
 msgid "Disease"
 msgstr "Nemoc"
 
@@ -95,8 +95,7 @@ msgstr "Nemoc"
 msgid "Diseases"
 msgstr "Nemoci"
 
-#: models.py:123
-#: models.py:518
+#: models.py:123 models.py:541
 msgid "herb"
 msgstr "bylina"
 
@@ -136,8 +135,7 @@ msgstr "modrá / fialová"
 msgid "green"
 msgstr "zelená"
 
-#: models.py:137
-#: models.py:181
+#: models.py:137 models.py:181
 msgid "other"
 msgstr "jiné"
 
@@ -249,13 +247,11 @@ msgstr "listopad"
 msgid "december"
 msgstr "prosinec"
 
-#: models.py:177
-#: models.py:234
+#: models.py:177 models.py:234
 msgid "alternate"
 msgstr "střídavé"
 
-#: models.py:178
-#: models.py:233
+#: models.py:178 models.py:233
 msgid "opposite"
 msgstr "vstřícné"
 
@@ -623,10 +619,7 @@ msgstr "Plody od"
 msgid "Fruit to"
 msgstr "Plody do"
 
-#: models.py:327
-#: models.py:360
-#: models.py:494
-#: models.py:526
+#: models.py:327 models.py:371 models.py:517 models.py:549
 msgid "Herb"
 msgstr "Bylinka"
 
@@ -634,147 +627,142 @@ msgstr "Bylinka"
 msgid "Herbs"
 msgstr "Bylinky"
 
-#: models.py:329
-msgid "name_en"
-msgstr "name_cs"
-
-#: models.py:343
+#: models.py:344
 msgid "Pictures"
 msgstr "Obrázky"
 
-#: models.py:361
+#: models.py:372
 msgid "Filename"
 msgstr "Soubor"
 
-#: models.py:366
+#: models.py:377
 msgid "Herb picture"
 msgstr "Obrázek bylinky"
 
-#: models.py:367
+#: models.py:378
 msgid "Herb pictures"
 msgstr "Obrázky bylinek"
 
-#: models.py:384
+#: models.py:398
 msgid "Thumbnail"
 msgstr "Náhled"
 
-#: models.py:474
+#: models.py:497
 msgid "tea"
 msgstr "čaj"
 
-#: models.py:475
+#: models.py:498
 msgid "inhalation"
 msgstr "inhalace"
 
-#: models.py:476
+#: models.py:499
 msgid "gargle"
 msgstr "kloktání"
 
-#: models.py:477
+#: models.py:500
 msgid "bath"
 msgstr "koupel"
 
-#: models.py:478
+#: models.py:501
 msgid "ointment"
 msgstr "mast"
 
-#: models.py:479
+#: models.py:502
 msgid "honey"
 msgstr "med"
 
-#: models.py:480
+#: models.py:503
 msgid "poultice"
 msgstr "obklad"
 
-#: models.py:481
+#: models.py:504
 msgid "oil"
 msgstr "olej"
 
-#: models.py:482
+#: models.py:505
 msgid "powder"
 msgstr "prášek"
 
-#: models.py:483
+#: models.py:506
 msgid "syrup"
 msgstr "sirup"
 
-#: models.py:484
+#: models.py:507
 msgid "liquere"
 msgstr "likér"
 
-#: models.py:485
+#: models.py:508
 msgid "juice"
 msgstr "šťáva"
 
-#: models.py:486
+#: models.py:509
 msgid "tincture"
 msgstr "tinktura"
 
-#: models.py:487
+#: models.py:510
 msgid "jam"
 msgstr "zavařenina"
 
-#: models.py:488
+#: models.py:511
 msgid "chewing"
 msgstr "žvýkání"
 
-#: models.py:496
+#: models.py:519
 msgid "Usage"
 msgstr "Užití"
 
-#: models.py:500
+#: models.py:523
 msgid "Herb usage"
 msgstr "Užití bylinky"
 
-#: models.py:501
+#: models.py:524
 msgid "Herb usages"
 msgstr "Užití bylinek"
 
-#: models.py:513
+#: models.py:536
 msgid "root"
 msgstr "kořen"
 
-#: models.py:514
+#: models.py:537
 msgid "bark"
 msgstr "kůra"
 
-#: models.py:515
+#: models.py:538
 msgid "flower"
 msgstr "květ"
 
-#: models.py:516
+#: models.py:539
 msgid "leaf"
 msgstr "list"
 
-#: models.py:517
+#: models.py:540
 msgid "needle"
 msgstr "jehlice"
 
-#: models.py:519
+#: models.py:542
 msgid "fruit"
 msgstr "plod"
 
-#: models.py:520
+#: models.py:543
 msgid "resin"
 msgstr "pryskyřice"
 
-#: models.py:527
+#: models.py:550
 msgid "Part"
 msgstr "Část"
 
-#: models.py:528
+#: models.py:551
 msgid "Pick from"
 msgstr "Sběr od"
 
-#: models.py:529
+#: models.py:552
 msgid "Pick to"
 msgstr "Sběr od"
 
-#: models.py:533
+#: models.py:556
 msgid "Herb pick"
 msgstr "Sběr bylinky"
 
-#: models.py:534
+#: models.py:557
 msgid "Herb picks"
 msgstr "Sběr bylinek"
-

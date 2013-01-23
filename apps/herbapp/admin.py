@@ -59,6 +59,7 @@ class HerbAdmin(admin.ModelAdmin):
     form = HerbForm
     list_display = ['name', 'botanical_name', 'family', 'plant_type', 'picture_thumbnails']
     list_filter = ['plant_type']
+    ordering = [_('name_en')]
     inlines = [HerbPickInline, HerbUsageInline]
     
     def save_model(self, request, obj, form, change):
