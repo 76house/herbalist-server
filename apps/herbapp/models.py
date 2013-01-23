@@ -10,7 +10,7 @@ from datetime import datetime
 from django.conf import settings
 from django.db import models
 from django.db.models.base import ModelBase
-from django.utils.translation import get_language, ugettext as _
+from django.utils.translation import get_language, ugettext_lazy as _
 
 
 # ------------------------------------------------------------------------------
