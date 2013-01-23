@@ -66,7 +66,7 @@ LANGUAGE_CODE = 'cs'
 
 LANGUAGES = (
     ('cs', u'Čeština'),
-    ('en', u'English'),
+#    ('en', u'English'),
 )
 
 SITE_ID = 1
@@ -150,14 +150,14 @@ TEMPLATE_CONTEXT_PROCESSORS +=  (
     "django.core.context_processors.request",
 )
 
-
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.sites',
-#    'django.contrib.messages',
+    'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_admin_bootstrapped',
     'django.contrib.admin',
     'south',
     'tastypie',

@@ -9,3 +9,5 @@ Package dependencies:
 - django-tastypie
 - simplejson
 - pycrypto
+- django_admin_bootstrapped
+
