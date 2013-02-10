@@ -5,9 +5,6 @@ env.hosts = ['bozka@s7.wservices.ch']
 def deploy():
    local('git push')
    run('cd ~/herbalist; git pull')
-   run('export DJANGO_SETTINGS_MODULE=herbalist.settings_deployment')
-   run('./manage.py migrate herbapp')
-   run('./manage.py collectstatic')
    run('~/init/herbalist restart')
 
 def restart():
