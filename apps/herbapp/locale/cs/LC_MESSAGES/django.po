@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: Herbalist\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-02-10 20:56+0100\n"
-"PO-Revision-Date: 2013-02-10 20:56+0100\n"
+"PO-Revision-Date: 2013-02-10 21:31+0100\n"
 "Last-Translator: Martin Marek <martin.marek@carabana.cz>\n"
 "Language-Team: Herbalist team\n"
 "Language: \n"
@@ -203,7 +203,7 @@ msgstr "kůže"
 
 #: models.py:127
 msgid "blood"
-msgstr "rev"
+msgstr "krev"
 
 #: models.py:128
 msgid "gynecology / urology"
