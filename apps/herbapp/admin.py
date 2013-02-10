@@ -6,7 +6,27 @@ from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.forms import ModelForm, MultipleChoiceField, CheckboxSelectMultiple
 from django.utils.translation import get_language, ugettext as _
-from herbapp.models import Purchase, Author, Disease, Herb, HerbPicture, HerbUsage, HerbPick, ENVIRONMENT_CHOICES
+from herbapp.models import Purchase, Author, Disease, Herb, HerbPicture, HerbUsage, HerbPick, \
+    ENVIRONMENT_CHOICES, AGE_CHOICES, DISEASE_TYPE_CHOICES, BODY_PART_CHOICES, HEAD_PART_CHOICES
+
+
+# ------------------------------------------------------------------------------
+
+class CsiModelForm(ModelForm):
+
+    # clean the string with a list result of multiple choice widget
+    def clean_csi(self, field): 
+        data = self.cleaned_data[field] 
+        data.sort() 
+        csi_list = [] 
+        first_element = True 
+        for element in data: 
+            if not first_element: 
+                csi_list.append(",") 
+            else: 
+                first_element = False 
+            csi_list.append(str(element)) 
+        return "".join(csi_list)
 
 
 # ------------------------------------------------------------------------------
@@ -27,7 +47,35 @@ class AuthorAdmin(admin.ModelAdmin):
 
 # ------------------------------------------------------------------------------
 
+class DiseaseForm(CsiModelForm):
+    age_group = MultipleChoiceField(choices=AGE_CHOICES, widget=CheckboxSelectMultiple(), required=True, label=_('Age group'))
+    disease_type = MultipleChoiceField(choices=DISEASE_TYPE_CHOICES, widget=CheckboxSelectMultiple(), required=True, label=_('Type'))
+
+    body_parts = MultipleChoiceField(choices=BODY_PART_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Body parts'))
+    head_parts = MultipleChoiceField(choices=HEAD_PART_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Head parts'))
+
+    class Meta:
+        model = Disease
+
+    def clean_age_group(self): 
+        return self.clean_csi('age_group')
+
+    def clean_disease_type(self): 
+        return self.clean_csi('disease_type')
+
+    def clean_body_parts(self): 
+        return self.clean_csi('body_parts')
+
+    def clean_head_parts(self): 
+        return self.clean_csi('head_parts')
+
+
+# ------------------------------------------------------------------------------
+
 class DiseaseAdmin(admin.ModelAdmin):
+    form = DiseaseForm
+    list_display = [_('name_en'), 'get_disease_type']
+    ordering = [_('name_en')]
     search_fields = [_('name_en')]
 
     def save_model(self, request, obj, form, change):
@@ -51,25 +99,11 @@ class HerbUsageInline(admin.TabularInline):
 
 # ------------------------------------------------------------------------------
 
-class HerbForm(ModelForm):
+class HerbForm(CsiModelForm):
     environment = MultipleChoiceField(choices=ENVIRONMENT_CHOICES, widget=CheckboxSelectMultiple(), required=True, label=_('Environment'))
 
     class Meta:
         model = Herb
-
-    # clean the string with a list result of multiple choice widget
-    def clean_csi(self, field): 
-        data = self.cleaned_data[field] 
-        data.sort() 
-        csi_list = [] 
-        first_element = True 
-        for element in data: 
-            if not first_element: 
-                csi_list.append(",") 
-            else: 
-                first_element = False 
-            csi_list.append(str(element)) 
-        return "".join(csi_list)
 
     def clean_environment(self): 
         return self.clean_csi('environment')

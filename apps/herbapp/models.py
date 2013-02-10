@@ -60,7 +60,7 @@ def make_property(k):
 class Purchase(models.Model):
 
     order           = models.CharField(max_length=32, verbose_name=_('Order'), primary_key=True) # purchase ID
-    token           = models.CharField(max_length=16, verbose_name=_('Token')) # token generated from signature and timestamp
+    token           = models.CharField(max_length=64, verbose_name=_('Token')) # token generated from signature and timestamp
     last_sync_ts    = models.DateTimeField(default=datetime.now, verbose_name=_('Last sync time')) # time of last successful synchronization (seconds)
     app_version     = models.IntegerField(default=0, verbose_name=_('Client version')) # client application: version
     app_platform    = models.CharField(default='', max_length=16, verbose_name=_('Client platform')) # client application: host OS name and version
@@ -98,6 +98,47 @@ class Author(models.Model):
 # Disease model - disease list
 #
 
+SEX_CHOICES = (
+    (1, _('men and women')),
+    (2, _('men only')),
+    (3, _('women only')),
+)
+
+AGE_CHOICES = (
+    (1, _('infants')),
+    (2, _('children')),
+    (3, _('teenagers')),
+    (4, _('adults')),
+    (5, _('seniors')),
+)
+
+DISEASE_TYPE_CHOICES = (
+    (1, _('physical')),
+    (2, _('psychical')),
+)
+
+BODY_PART_CHOICES = (
+    (1, _('head / neck')),
+    (2, _('chest')),
+    (3, _('back')),
+    (4, _('stomach / bottom')),
+    (5, _('hands / legs')),
+    (6, _('skin')),
+    (7, _('blood')),
+    (8, _('gynecology / urology')),
+)
+
+HEAD_PART_CHOICES = (
+    (1, _('neck')),
+    (2, _('eyes')),
+    (3, _('ears')),
+    (4, _('nose')),
+    (5, _('mouth')),
+    (6, _('hair')),
+    (7, _('brain')),
+)
+
+
 class Disease(models.Model):
     __metaclass__   = LocalizeModelBase
 
@@ -106,13 +147,29 @@ class Disease(models.Model):
     name_cs         = models.CharField(max_length=40, verbose_name=_('Name (CS)'))
     name            = Translate
     timestamp       = models.DateTimeField(default=datetime.now, editable=False) # last change
+    affected_sex    = models.IntegerField(choices=SEX_CHOICES, default=1, verbose_name=_('Affected sex'))
+    age_group       = models.CommaSeparatedIntegerField(max_length=10, default='', verbose_name=_('Age group')) # list of AGE_CHOICES
+    disease_type    = models.CommaSeparatedIntegerField(max_length=4, default='1', verbose_name=_('Type')) # list of DISEASE_TYPE_CHOICES
+    body_parts      = models.CommaSeparatedIntegerField(max_length=16, null=True, blank=True, default='', verbose_name=_('Body parts')) # list of BODY_PART_CHOICES
+    head_parts      = models.CommaSeparatedIntegerField(max_length=14, null=True, blank=True, default='', verbose_name=_('Head parts')) # list of HEAD_PART_CHOICES
 
     class Meta:
         verbose_name = _('Disease')
         verbose_name_plural = _('Diseases')
+        ordering = [_('name_en')]
 
     def __unicode__(self):
         return "%s" % self.name
+        
+    def get_disease_type(self):
+        names = []
+        lst = self.disease_type.split(',')
+        for k, v in DISEASE_TYPE_CHOICES:
+            if str(k) in lst:
+                names.append(''.join(v))
+        return ', '.join(names)
+
+    get_disease_type.short_description = _('Type')
 
 
 # ------------------------------------------------------------------------------
@@ -529,6 +586,9 @@ class HerbUsage(models.Model):
     disease_id      = models.ForeignKey('herbapp.Disease', verbose_name=_('Disease'))
     usage           = models.IntegerField(choices = USAGE_CHOICES, default=0, verbose_name=_('Usage'))
     timestamp       = models.DateTimeField(default=datetime.now, editable=False) # last change
+    note_en         = models.CharField(max_length=200, blank=True, verbose_name=_('Note (EN)'))
+    note_cs         = models.CharField(max_length=200, blank=True, verbose_name=_('Note (CS)'))
+    note            = Translate
 
     class Meta:
         verbose_name = _('Herb usage')
@@ -562,6 +622,9 @@ class HerbPick(models.Model):
     month_from      = models.IntegerField(choices = MONTH_CHOICES, default=0, verbose_name=_('Pick from'))
     month_to        = models.IntegerField(choices = MONTH_CHOICES, default=0, verbose_name=_('Pick to'))
     timestamp       = models.DateTimeField(default=datetime.now, editable=False) # last change
+    note_en         = models.CharField(max_length=200, blank=True, verbose_name=_('Note (EN)'))
+    note_cs         = models.CharField(max_length=200, blank=True, verbose_name=_('Note (CS)'))
+    note            = Translate
 
     class Meta:
         verbose_name = _('Herb pick')

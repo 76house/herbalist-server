@@ -208,14 +208,6 @@ class HerbPictureResource(ModelResource):
         return bundle
 
 
-
-
-
-#request = None
-#full_url = ''.join(['http://', get_current_site(request).domain, obj.get_absolute_url()])
-
-
-
 class HerbUsageResource(ModelResource):
     herb_id = fields.ForeignKey(HerbResource, 'herb_id')
     disease_id = fields.ForeignKey(DiseaseResource, 'disease_id')
