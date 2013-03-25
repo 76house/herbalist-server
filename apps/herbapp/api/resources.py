@@ -91,8 +91,7 @@ class PurchaseResource(ModelResource):
 
             # data / signature is correct
             ts = datetime.now()
-            purchase_data_parsed = json.loads(purchase_data)
-            order = purchase_data_parsed.get('orders')[0].get('orderId')
+            order = purchase_data.get('orders')[0].get('orderId')
             log.debug("order: %s" % order)
 
             token = hashlib.sha1(data_signature + str(random.random()) + ts.strftime("%Y%m%dT%H%M%S")).hexdigest()
