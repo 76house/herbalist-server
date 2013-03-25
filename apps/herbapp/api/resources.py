@@ -74,13 +74,14 @@ class PurchaseResource(ModelResource):
         data = json.loads(request.raw_post_data)
         log.debug("json data: %s" % data)
         purchase_data = data.get("inapp-purchase-data")
-        log.debug("purchase_data: %s" % purchase_data)
+        purchase_data_dump = json.dumps(purchase_data, separators=(',', ':'), sort_keys=True)
+        log.debug("purchase_data_dump: %s" % purchase_data_dump)
         data_signature = data.get("inapp-data-signature")
-        log.debug("json data: %s" % data_signature)
+        log.debug("data_signature: %s" % data_signature)
 
         # verify that signature is the result of signing the purchase data
         VERIFY_KEY = RSA.importKey(base64.decodestring(settings.PUBLIC_KEY))
-        h = SHA.new(purchase_data)
+        h = SHA.new(purchase_data_dump)
         verifier = PKCS1_v1_5.new(VERIFY_KEY)
         signature = base64.decodestring(data_signature)
         verify_ok = verifier.verify(h, signature)
