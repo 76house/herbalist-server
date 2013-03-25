@@ -2,6 +2,7 @@ import os
 import random
 import hashlib
 import base64
+import logging
 import simplejson as json
 from datetime import datetime
 from functools import partial
@@ -22,6 +23,8 @@ from Crypto.Hash import SHA
 from Crypto.PublicKey import RSA
 
 from herbapp.models import Purchase, Author, Disease, Herb, HerbPicture, HerbUsage, HerbPick
+
+log = logging.getLogger(__name__)
 
 
 # dehydrate helper for foreign key
@@ -63,56 +66,68 @@ class PurchaseResource(ModelResource):
 
     def post_list(self, request=None, **kwargs):
 
-        try:
-            # parse JSON data from POST request
-            data = json.loads(request.raw_post_data)
-            purchase_data = data.get("inapp-purchase-data")
-            data_signature = data.get("inapp-data-signature")
+        log.debug("post_list")
+        log.debug("raw_post_data: %s" % request.raw_post_data)
 
-            # verify that signature is the result of signing the purchase data
-            VERIFY_KEY = RSA.importKey(base64.decodestring(settings.PUBLIC_KEY))
-            h = SHA.new(purchase_data)
-            verifier = PKCS1_v1_5.new(VERIFY_KEY)
-            signature = base64.decodestring(data_signature)
-            verify_ok = verifier.verify(h, signature)
+        #try:
+        # parse JSON data from POST request
+        data = json.loads(request.raw_post_data)
+        log.debug("json data: %s" % data)
+        purchase_data = data.get("inapp-purchase-data")
+        log.debug("purchase_data: %s" % purchase_data)
+        data_signature = data.get("inapp-data-signature")
+        log.debug("json data: %s" % data_signature)
+
+        # verify that signature is the result of signing the purchase data
+        VERIFY_KEY = RSA.importKey(base64.decodestring(settings.PUBLIC_KEY))
+        h = SHA.new(purchase_data)
+        verifier = PKCS1_v1_5.new(VERIFY_KEY)
+        signature = base64.decodestring(data_signature)
+        verify_ok = verifier.verify(h, signature)
+        log.debug("verify: %r" % verify_ok)
+        
+        if True: # TODO verify_ok
+
+            # data / signature is correct
+            ts = datetime.now()
+            purchase_data_parsed = json.loads(purchase_data)
+            order = purchase_data_parsed.get('orders')[0].get('orderId')
+            log.debug("order: %s" % order)
+
+            token = hashlib.sha1(data_signature + str(random.random()) + ts.strftime("%Y%m%dT%H%M%S")).hexdigest()
+            token_data = {"token" : token}
+            log.debug("token: %s" % token)
+
+            # store or update token for related order ID
+            purchase, created = Purchase.objects.get_or_create(order=order)
+            log.debug("purchase created")
+            purchase.order = order
+            purchase.token = token
+            purchase.app_platform = data.get('client-platform')
+            purchase.app_version = data.get('client-version')
+            purchase.app_language = data.get('client-language')
+            purchase.screen_width = data.get('screen-width')
+            purchase.last_sync_ts = ts
+            purchase.counter = purchase.counter + 1
+            purchase.save()
+            log.debug("purchase saved")
             
-            if True: # TODO verify_ok
-
-                # data / signature is correct
-                ts = datetime.now()
-                purchase_data_parsed = json.loads(purchase_data)
-                order = purchase_data_parsed.get('orders')[0].get('orderId')
-                token = hashlib.sha1(data_signature + str(random.random()) + ts.strftime("%Y%m%dT%H%M%S")).hexdigest()
-                token_data = {"token" : token}
-
-                # store or update token for related order ID
-                purchase, created = Purchase.objects.get_or_create(order=order)
-                purchase.order = order
-                purchase.token = token
-                purchase.app_platform = data.get('client-platform')
-                purchase.app_version = data.get('client-version')
-                purchase.app_language = data.get('client-language')
-                purchase.screen_width = data.get('screen-width')
-                purchase.last_sync_ts = ts
-                purchase.counter = purchase.counter + 1
-                purchase.save()
-                
-                status = 200
-                if created:
-                    status = 201
-                
-                # 200 OK / 201 Created (verification successful)
-                response = HttpResponse(json.dumps(token_data) + "\n", mimetype="application/json", status=status)
-
-            else:
+            status = 200
+            if created:
+                status = 201
             
-                # 401 Unauthorized (verification failed)
-                response = HttpResponse(status=401)
+            # 200 OK / 201 Created (verification successful)
+            response = HttpResponse(json.dumps(token_data) + "\n", mimetype="application/json", status=status)
 
-        except:
+        else:
+        
+            # 401 Unauthorized (verification failed)
+            response = HttpResponse(status=401)
 
-            # 400 Bad request (failed to parse the request)
-            response = HttpResponse(status=400)
+        #except:
+
+        #    # 400 Bad request (failed to parse the request)
+        #    response = HttpResponse(status=400)
 
         return response
 
