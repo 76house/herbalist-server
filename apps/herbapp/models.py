@@ -64,7 +64,7 @@ class Purchase(models.Model):
     last_sync_ts    = models.DateTimeField(default=datetime.now, verbose_name=_('Last sync time')) # time of last successful synchronization (seconds)
     app_version     = models.IntegerField(default=0, verbose_name=_('Client version')) # client application: version
     app_platform    = models.CharField(default='', max_length=16, verbose_name=_('Client platform')) # client application: host OS name and version
-    app_language    = models.CharField(default='en', max_length=2, verbose_name=_('Language'), primary_key=True) # client application: language code
+    app_language    = models.CharField(default='', max_length=2, verbose_name=_('Language')) # client application: language code
     screen_width    = models.IntegerField(default=0, verbose_name=_('Screen width')) # client device: max.screen width
     counter         = models.IntegerField(default=0, verbose_name=_('Request count')) # how many times the auth request has been called by this client
 
