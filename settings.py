@@ -62,11 +62,11 @@ TIME_ZONE = 'Europe/Prague'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'de'
+LANGUAGE_CODE = 'cs'
 
 LANGUAGES = (
-#    ('cs', u'Čeština'),
-#    ('en', u'English'),
+    ('cs', u'Čeština'),
+    ('en', u'English'),
     ('de', u'Deutsch'),
 )
 
