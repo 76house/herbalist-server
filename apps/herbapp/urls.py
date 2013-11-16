@@ -21,6 +21,7 @@ v1_api.register(HerbPickResource())
 urlpatterns = patterns('',
 
     (r'^api/', include(v1_api.urls)),
+    (r'^i18n/', include('django.conf.urls.i18n')),
     url(r'^$', 'herbapp.views.index'),
 
 ) + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) + staticfiles_urlpatterns()

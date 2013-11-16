@@ -119,23 +119,20 @@ DISEASE_TYPE_CHOICES = (
 
 BODY_PART_CHOICES = (
     (1, _('head / neck')),
-    (2, _('chest')),
-    (3, _('back')),
+    (2, _('skin')),
+    (3, _('chest / back')),
     (4, _('stomach / bottom')),
-    (5, _('hands / legs')),
-    (6, _('skin')),
-    (7, _('blood')),
-    (8, _('gynecology / urology')),
+    (5, _('genitourinary tract')),
+    (6, _('hands / legs')),
 )
 
 HEAD_PART_CHOICES = (
-    (1, _('neck')),
-    (2, _('eyes')),
-    (3, _('ears')),
-    (4, _('nose')),
-    (5, _('mouth')),
-    (6, _('hair')),
-    (7, _('brain')),
+    (1, _('hair')),
+    (2, _('brain')),
+    (3, _('eyes')),
+    (4, _('ears')),
+    (5, _('mouth / nose')),
+    (6, _('neck')),
 )
 
 
@@ -144,6 +141,7 @@ class Disease(models.Model):
 
     _id             = models.AutoField(primary_key=True)
     name_en         = models.CharField(max_length=40, verbose_name=_('Name (EN)'))
+    name_de         = models.CharField(max_length=40, verbose_name=_('Name (DE)'))
     name_cs         = models.CharField(max_length=40, verbose_name=_('Name (CS)'))
     name            = Translate
     timestamp       = models.DateTimeField(default=datetime.now, editable=False) # last change
@@ -178,9 +176,10 @@ class Disease(models.Model):
 
 PLANT_CHOICES = (
     (1, _('herb')),
-    (2, _('shrub')),
-    (3, _('needle tree')),
+    (2, _('leaf shrub')),
+    (3, _('needle shrub')),
     (4, _('leaf tree')),
+    (5, _('needle tree')),
 )
 
 FLOWER_COLOR_CHOICES = (
@@ -197,20 +196,17 @@ FLOWER_COLOR_CHOICES = (
 FLOWER_CHOICES = (
     (0, ''),
     (1, _('simple')),
-    (2, _('capitulum - disc florets')),
-    (3, _('capitulum - ray florets')),
-    (4, _('capitulum - disc and ray florets')),
-    (5, _('cyme')),
-    (6, _('corymb')),
-    (7, _('compound corymb')),
-    (8, _('dychasia')),
-    (9, _('head')),
-    (10, _('panicle')),
-    (11, _('raceme')),
-    (12, _('spike')),
-    (13, _('umbel')),
-    (14, _('compound umbel')),
-    (15, _('catkin')),
+    (2, _('capitulum - disc or ray florets')),
+    (3, _('cyme')),
+    (4, _('corymb')),
+    (5, _('dychasia')),
+    (6, _('umbel')),
+    (7, _('compound umbel')),
+    (8, _('panicle')),
+    (9, _('raceme')),
+    (10, _('spike')),
+    (11, _('head')),
+    (12, _('catkin')),
 )
 
 MONTH_CHOICES = (
@@ -264,17 +260,17 @@ LEAF_SHAPE_CHOICES = (
     (4, _('egg-shaped')),
     (5, _('teardrop-shaped')),
     (6, _('lanceolate')),
-    (7, _('oblanceolate')),
+    (7, _('wedge-shaped')),
     (8, _('spoon-shaped')),
-    (9, _('diamond-shaped')),
-    (10, _('heart-shaped')),
-    (11, _('inverse heart-shaped')),
-    (12, _('kidney-shaped')),
-    (13, _('triangular')),
-    (14, _('inverse triangular')),
-    (15, _('arrow-shaped')),
-    (16, _('spear-shaped')),
-    (17, _('pinnatisect')),
+    (9, _('triangular')),
+    (10, _('diamond-shaped')),
+    (11, _('heart-shaped')),
+    (12, _('inverse heart-shaped')),
+    (13, _('kidney-shaped')),
+    (14, _('arrow-shaped')),
+    (15, _('spear-shaped')),
+    (16, _('pinnatisect')),
+    (17, _('other')),
 )
 
 NEEDLE_CHOICES = (
@@ -287,18 +283,17 @@ NEEDLE_CHOICES = (
 
 BRANCHING_CHOICES = (
     (0, ''),
-    (1, _('opposite')),
-    (2, _('alternate')),
+    (1, _('alternate')),
+    (2, _('opposite')),
     (3, _('with thorns')),
 )
 
 BARK_CHOICES = (
     (0, ''),
     (1, _('smooth')),
-    (2, _('ridged')),
-    (3, _('lenticelas')),
-    (4, _('grooved')),
-    (5, _('scaly')),
+    (2, _('lenticelas')),
+    (3, _('grooved')),
+    (4, _('scaly')),
 )
 
 FRUIT_CHOICES = (
@@ -310,7 +305,7 @@ FRUIT_CHOICES = (
     (5, _('nut / nutlet')),
     (6, _('achene')),
     (7, _('winged achene')),
-    (8, _('berry / aggregate drupes')),
+    (8, _('berries')),
     (9, _('aggregate fruits')),
     (10, _('drupe')),
     (11, _('pome')),
@@ -339,6 +334,10 @@ class Herb(models.Model):
     alias_en        = models.CharField(max_length=100, blank=True, verbose_name=_('Folk names (EN)'))
     family_en       = models.CharField(max_length=40, blank=True, verbose_name=_('Family (EN)'))
     description_en  = models.TextField(blank=True, verbose_name=_('Description (EN)'))
+    name_de         = models.CharField(max_length=40, verbose_name=_('Common name (DE)'))
+    alias_de        = models.CharField(max_length=100, blank=True, verbose_name=_('Folk names (DE)'))
+    family_de       = models.CharField(max_length=40, blank=True, verbose_name=_('Family (DE)'))
+    description_de  = models.TextField(blank=True, verbose_name=_('Description (DE)'))
     name_cs         = models.CharField(max_length=40, verbose_name=_('Common name (CS)'))
     alias_cs        = models.CharField(max_length=100, blank=True, verbose_name=_('Folk names (CS)'))
     family_cs       = models.CharField(max_length=40, blank=True, verbose_name=_('Family (CS)'))
@@ -403,13 +402,6 @@ class Herb(models.Model):
     picture_thumbnails.short_description = _('Pictures')
     picture_thumbnails.allow_tags = True
 
-    # displays a bullet if Czech texts are complete
-    def has_language_cs(self):
-        if (self.name_cs != "" and self.alias_cs != "" and self.family_cs != "" and self.description_cs != ""):
-            return '<span style="font-size: 16pt;">&bull;</span>'
-        else:
-            return ""
-
     # displays a bullet if English texts are complete
     def has_language_en(self):
         if (self.name_en != "" and self.alias_en != "" and self.family_en != "" and self.description_en != ""):
@@ -417,10 +409,26 @@ class Herb(models.Model):
         else:
             return ""
 
-    has_language_cs.short_description = 'CZ'
+    # displays a bullet if German texts are complete
+    def has_language_de(self):
+        if (self.name_de != "" and self.alias_de != "" and self.family_de != "" and self.description_de != ""):
+            return '<span style="font-size: 16pt;">&bull;</span>'
+        else:
+            return ""
+
+    # displays a bullet if Czech texts are complete
+    def has_language_cs(self):
+        if (self.name_cs != "" and self.alias_cs != "" and self.family_cs != "" and self.description_cs != ""):
+            return '<span style="font-size: 16pt;">&bull;</span>'
+        else:
+            return ""
+
     has_language_en.short_description = 'EN'
-    has_language_cs.allow_tags = True
+    has_language_de.short_description = 'DE'
+    has_language_cs.short_description = 'CZ'
     has_language_en.allow_tags = True
+    has_language_de.allow_tags = True
+    has_language_cs.allow_tags = True
 
 
 # ------------------------------------------------------------------------------
@@ -437,7 +445,7 @@ class HerbPicture(models.Model):
     PICTURE_NAME_LENGTH = 16
 
     # picture widths for various devices
-    PICTURE_WIDTHS = (120, 200, 480, 800, 1280)
+    PICTURE_WIDTHS = (120, 408, 612)
 
     _id             = models.AutoField(primary_key=True)
     author_id       = models.ForeignKey('herbapp.Author', default=1, verbose_name=_('Author'))
@@ -587,6 +595,7 @@ class HerbUsage(models.Model):
     usage           = models.IntegerField(choices = USAGE_CHOICES, default=0, verbose_name=_('Usage'))
     timestamp       = models.DateTimeField(default=datetime.now, editable=False) # last change
     note_en         = models.CharField(max_length=200, blank=True, verbose_name=_('Note (EN)'))
+    note_de         = models.CharField(max_length=200, blank=True, verbose_name=_('Note (DE)'))
     note_cs         = models.CharField(max_length=200, blank=True, verbose_name=_('Note (CS)'))
     note            = Translate
 
@@ -623,6 +632,7 @@ class HerbPick(models.Model):
     month_to        = models.IntegerField(choices = MONTH_CHOICES, default=0, verbose_name=_('Pick to'))
     timestamp       = models.DateTimeField(default=datetime.now, editable=False) # last change
     note_en         = models.CharField(max_length=200, blank=True, verbose_name=_('Note (EN)'))
+    note_de         = models.CharField(max_length=200, blank=True, verbose_name=_('Note (DE)'))
     note_cs         = models.CharField(max_length=200, blank=True, verbose_name=_('Note (CS)'))
     note            = Translate
 

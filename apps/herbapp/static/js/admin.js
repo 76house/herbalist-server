@@ -11,17 +11,17 @@
                 case "1":
                 {
                     // plant
-                    $("#fieldset-4").show(); // flower
-                    $("#fieldset-5").show(); // leaf
-                    $("#fieldset-6").hide(); // tree
+                    $("#fieldset-5").show(); // flower
+                    $("#fieldset-6").show(); // leaf
+                    $("#fieldset-7").hide(); // shrub/tree
                 } break;
 
                 case "2":
                 {
-                    // shrub
-                    $("#fieldset-4").show(); // flower
-                    $("#fieldset-5").show(); // leaf
-                    $("#fieldset-6").show(); // tree
+                    // leaf shrub
+                    $("#fieldset-5").show(); // flower
+                    $("#fieldset-6").show(); // leaf
+                    $("#fieldset-7").show(); // shrub/tree
                     $(".field-needle_type").hide();
                     $(".field-branching").show();
                     $(".field-bark_type").hide();
@@ -30,24 +30,36 @@
 
                 case "3":
                 {
-                    // needle tree
-                    $("#fieldset-4").hide(); // flower
-                    $("#fieldset-5").hide(); // leaf
-                    $("#fieldset-6").show(); // tree
+                    // needle shrub
+                    $("#fieldset-5").hide(); // flower
+                    $("#fieldset-6").hide(); // leaf
+                    $("#fieldset-7").show(); // shrub/tree
                     $(".field-needle_type").show();
                     $(".field-branching").hide();
-                    $(".field-bark_type").show();
-                    $(".field-bark_type_alt").show();
+                    $(".field-bark_type").hide();
+                    $(".field-bark_type_alt").hide();
                 } break;
 
                 case "4":
                 {
                     // leaf tree
-                    $("#fieldset-4").show(); // flower
-                    $("#fieldset-5").show(); // leaf
-                    $("#fieldset-6").show(); // tree
+                    $("#fieldset-5").show(); // flower
+                    $("#fieldset-6").show(); // leaf
+                    $("#fieldset-7").show(); // shrub/tree
                     $(".field-needle_type").hide();
                     $(".field-branching").show();
+                    $(".field-bark_type").show();
+                    $(".field-bark_type_alt").show();
+                } break;
+
+                case "5":
+                {
+                    // needle tree
+                    $("#fieldset-5").hide(); // flower
+                    $("#fieldset-6").hide(); // leaf
+                    $("#fieldset-7").show(); // shrub/tree
+                    $(".field-needle_type").show();
+                    $(".field-branching").hide();
                     $(".field-bark_type").show();
                     $(".field-bark_type_alt").show();
                 } break;

@@ -62,11 +62,12 @@ TIME_ZONE = 'Europe/Prague'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'cs'
+LANGUAGE_CODE = 'de'
 
 LANGUAGES = (
-    ('cs', u'Čeština'),
+#    ('cs', u'Čeština'),
 #    ('en', u'English'),
+    ('de', u'Deutsch'),
 )
 
 SITE_ID = 1
@@ -148,6 +149,7 @@ from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS
 TEMPLATE_CONTEXT_PROCESSORS +=  (
     "django.contrib.messages.context_processors.messages",
     "django.core.context_processors.request",
+    "django.core.context_processors.i18n",
 )
 
 INSTALLED_APPS = (
@@ -163,6 +165,11 @@ INSTALLED_APPS = (
     'tastypie',
 
     'herbapp',
+)
+
+LOCALE_PATHS = (
+
+    os.path.join(PROJECT_ROOT, 'apps/herbapp/locale'),
 )
 
 # A sample logging configuration. The only tangible logging

@@ -8,20 +8,20 @@ msgstr ""
 "Project-Id-Version: Herbalist\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-16 13:16+0100\n"
-"PO-Revision-Date: 2013-11-16 13:20+0100\n"
+"PO-Revision-Date: 2013-11-16 15:04+0100\n"
 "Last-Translator: Martin Marek <martin.marek@carabana.cz>\n"
 "Language-Team: Herbalist team\n"
-"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Poedit-SourceCharset: utf-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: Poedit 1.5.4\n"
+"Language: de\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 
 #: admin.py:51 models.py:149
 msgid "Age group"
-msgstr "Věková skupina"
+msgstr "Altergruppe"
 
 #: admin.py:52 models.py:150 models.py:170
 msgid "Type"
@@ -29,56 +29,56 @@ msgstr "Typ"
 
 #: admin.py:54 models.py:151
 msgid "Body parts"
-msgstr "Části těla"
+msgstr "Körperteile"
 
 #: admin.py:55 models.py:152
 msgid "Head parts"
-msgstr "Části hlavy"
+msgstr "Kopfteile"
 
 #: admin.py:77 admin.py:78 admin.py:79 admin.py:116 admin.py:118 admin.py:119
 #: models.py:157 models.py:386
 msgid "name_en"
-msgstr "name_cs"
+msgstr "name_de"
 
 #: admin.py:103 models.py:381
 msgid "Environment"
-msgstr "Prostředí"
+msgstr "Umgebung"
 
 #: admin.py:116
 msgid "family_en"
-msgstr "family_cs"
+msgstr "family_de"
 
 #: admin.py:127
 msgid "English"
-msgstr "Anglicky"
+msgstr "Englisch"
 
 #: admin.py:131
 msgid "German"
-msgstr "Německy"
+msgstr "Deutsch"
 
 #: admin.py:135
 msgid "Czech"
-msgstr "Česky"
+msgstr "Tschechisch"
 
 #: admin.py:139
 msgid "Flower"
-msgstr "Květ"
+msgstr "Blüte"
 
 #: admin.py:142
 msgid "Leaf"
-msgstr "List"
+msgstr "Blatt"
 
 #: admin.py:145
 msgid "Shrub / tree"
-msgstr "Keř / strom"
+msgstr "Strauch / Baum"
 
 #: admin.py:148
 msgid "Fruit"
-msgstr "Plod"
+msgstr "Frucht"
 
 #: models.py:62
 msgid "Order"
-msgstr "Objednávka"
+msgstr "Bestellung"
 
 #: models.py:63
 msgid "Token"
@@ -86,39 +86,39 @@ msgstr "Token"
 
 #: models.py:64
 msgid "Last sync time"
-msgstr "Čas poslední synchronizace"
+msgstr "Letzte Sync-Zeit"
 
 #: models.py:65
 msgid "Client version"
-msgstr "Verze klienta"
+msgstr "Klientversion"
 
 #: models.py:66
 msgid "Client platform"
-msgstr "Platforma klienta"
+msgstr "Klientplatform"
 
 #: models.py:67
 msgid "Language"
-msgstr "Jazyk"
+msgstr "Sprache"
 
 #: models.py:68
 msgid "Screen width"
-msgstr "Šířka displeje"
+msgstr "Bildschirmbreite"
 
 #: models.py:69
 msgid "Request count"
-msgstr "Počet požadavků"
+msgstr "Requestanzahl"
 
 #: models.py:72
 msgid "Purchase"
-msgstr "Nákup"
+msgstr "Kauf"
 
 #: models.py:73
 msgid "Purchases"
-msgstr "Nákupy"
+msgstr "Käufe"
 
 #: models.py:86
 msgid "Name"
-msgstr "Jméno"
+msgstr "Name"
 
 #: models.py:90 models.py:329 models.py:451
 msgid "Author"
@@ -126,842 +126,800 @@ msgstr "Autor"
 
 #: models.py:91
 msgid "Authors"
-msgstr "Autoři"
+msgstr "Autoren"
 
 #: models.py:102
 msgid "men and women"
-msgstr "muži i ženy"
+msgstr "Männer und Frauen"
 
 #: models.py:103
 msgid "men only"
-msgstr "pouze muži"
+msgstr "nur Männer"
 
 #: models.py:104
 msgid "women only"
-msgstr "pouze ženy"
+msgstr "nur Frauen"
 
 #: models.py:108
 msgid "infants"
-msgstr "kojenci"
+msgstr "Säuglinge"
 
 #: models.py:109
 msgid "children"
-msgstr "děti"
+msgstr "Kinder"
 
 #: models.py:110
 msgid "teenagers"
-msgstr "dospívající"
+msgstr "Teenagers"
 
 #: models.py:111
 msgid "adults"
-msgstr "dospělí"
+msgstr "Erwachsene"
 
 #: models.py:112
 msgid "seniors"
-msgstr "senioři"
+msgstr "Senioren"
 
 #: models.py:116
 msgid "physical"
-msgstr "fyzická"
+msgstr "physisch"
 
 #: models.py:117
 msgid "psychical"
-msgstr "psychická"
+msgstr "psychisch"
 
 #: models.py:121
 msgid "head / neck"
-msgstr "hlava / krk"
+msgstr "Kopf / Hals"
 
 #: models.py:122
 msgid "skin"
-msgstr "kůže"
+msgstr "Haut"
 
 #: models.py:123
 msgid "chest / back"
-msgstr "hrudník / záda"
+msgstr "Brustkorb / Rücken"
 
 #: models.py:124
 msgid "stomach / bottom"
-msgstr "břicho / zadek"
+msgstr "Bauch / Hinterteil"
 
 #: models.py:125
 msgid "genitourinary tract"
-msgstr "genitourinální trakt"
+msgstr "Urogenitaltrakt"
 
 #: models.py:126
 msgid "hands / legs"
-msgstr "ruce / nohy"
+msgstr "Arme / Beine"
 
 #: models.py:130
 msgid "hair"
-msgstr "vlasy"
+msgstr "Haar"
 
 #: models.py:131
 msgid "brain"
-msgstr "mozek"
+msgstr "Gehirn"
 
 #: models.py:132
 msgid "eyes"
-msgstr "oči"
+msgstr "Augen"
 
 #: models.py:133
 msgid "ears"
-msgstr "uši"
+msgstr "Ohren"
 
 #: models.py:134
 msgid "mouth / nose"
-msgstr "ústa / nos"
+msgstr "Mund / Nase"
 
 #: models.py:135
 msgid "neck"
-msgstr "krk"
+msgstr "Hals"
 
 #: models.py:143
 msgid "Name (EN)"
-msgstr "Jméno (EN)"
+msgstr "Name (EN)"
 
 #: models.py:144
 msgid "Name (DE)"
-msgstr "Jméno (DE)"
+msgstr "Name (DE)"
 
 #: models.py:145
 msgid "Name (CS)"
-msgstr "Jméno (CZ)"
+msgstr "Name (CS)"
 
 #: models.py:148
 msgid "Affected sex"
-msgstr "Postihuje pohlaví"
+msgstr "betroffenes Geschlecht"
 
 #: models.py:155 models.py:594
 msgid "Disease"
-msgstr "Zdravotní potíž"
+msgstr "Gesundheitsproblem"
 
 #: models.py:156
 msgid "Diseases"
-msgstr "Zdravotní potíže"
+msgstr "Gesundheitsprobleme"
 
 #: models.py:178 models.py:621
 msgid "herb"
-msgstr "bylina"
+msgstr "Kraut"
 
 #: models.py:179
 msgid "leaf shrub"
-msgstr "listnatý keř"
+msgstr "Laubstrauch"
 
 #: models.py:180
 msgid "needle shrub"
-msgstr "jehličnatý keř"
+msgstr "Nadelstrauch"
 
 #: models.py:181
 msgid "leaf tree"
-msgstr "listnatý strom"
+msgstr "Laubbaum"
 
 #: models.py:182
 msgid "needle tree"
-msgstr "jehličnatý strom"
+msgstr "Nadelbaum"
 
 #: models.py:187
 msgid "white"
-msgstr "bílá"
+msgstr "weiß"
 
 #: models.py:188
 msgid "yellow"
-msgstr "žlutá"
+msgstr "gelb"
 
 #: models.py:189
 msgid "brown"
-msgstr "hnědá"
+msgstr "braun"
 
 #: models.py:190
 msgid "red / pink"
-msgstr "červená / růžová"
+msgstr "rot / rosa"
 
 #: models.py:191
 msgid "blue / magenta"
-msgstr "modrá / fialová"
+msgstr "blau / lila"
 
 #: models.py:192
 msgid "green"
-msgstr "zelená"
+msgstr "grün"
 
 #: models.py:193 models.py:234 models.py:273
 msgid "other"
-msgstr "jiné"
+msgstr "andere"
 
 #: models.py:198
 msgid "simple"
-msgstr "jednoduchý"
+msgstr "einfach"
 
 #: models.py:199
 msgid "capitulum - disc or ray florets"
-msgstr "úbor - trubkovité a jazykovité květy"
+msgstr "Blutenköpfchen - Scheibenblüten oder Zungenblüten"
 
 #: models.py:200
 msgid "cyme"
-msgstr "vrcholík"
+msgstr "Trugdolde"
 
 #: models.py:201
 msgid "corymb"
-msgstr "chocholík"
+msgstr "Schirmtraube"
 
 #: models.py:202
 msgid "dychasia"
-msgstr "vidlan"
+msgstr "Sprossverzweigung"
 
 #: models.py:203
 msgid "umbel"
-msgstr "okolík"
+msgstr "Dolde"
 
 #: models.py:204
 msgid "compound umbel"
-msgstr "složený okolík"
+msgstr "Doldenrispe"
 
 #: models.py:205
 msgid "panicle"
-msgstr "lata"
+msgstr "Rispe"
 
 #: models.py:206
 msgid "raceme"
-msgstr "hrozen"
+msgstr "Traube"
 
 #: models.py:207
 msgid "spike"
-msgstr "klas"
+msgstr "Ähre"
 
 #: models.py:208
 msgid "head"
-msgstr "hlávka"
+msgstr "Köpfchen"
 
 #: models.py:209
 msgid "catkin"
-msgstr "jehněda"
+msgstr "Kätzchen"
 
 #: models.py:214
 msgid "january"
-msgstr "leden"
+msgstr "Januar"
 
 #: models.py:215
 msgid "february"
-msgstr "únor"
+msgstr "Februar"
 
 #: models.py:216
 msgid "march"
-msgstr "březen"
+msgstr "März"
 
 #: models.py:217
 msgid "april"
-msgstr "duben"
+msgstr "April"
 
 #: models.py:218
 msgid "may"
-msgstr "květen"
+msgstr "Mai"
 
 #: models.py:219
 msgid "june"
-msgstr "červen"
+msgstr "Juni"
 
 #: models.py:220
 msgid "july"
-msgstr "červenec"
+msgstr "Juli"
 
 #: models.py:221
 msgid "august"
-msgstr "srpen"
+msgstr "August"
 
 #: models.py:222
 msgid "september"
-msgstr "září"
+msgstr "September"
 
 #: models.py:223
 msgid "october"
-msgstr "říjen"
+msgstr "Oktober"
 
 #: models.py:224
 msgid "november"
-msgstr "listopad"
+msgstr "November"
 
 #: models.py:225
 msgid "december"
-msgstr "prosinec"
+msgstr "Dezember"
 
 #: models.py:230 models.py:286
 msgid "alternate"
-msgstr "střídavé"
+msgstr "wechselständig"
 
 #: models.py:231 models.py:287
 msgid "opposite"
-msgstr "vstřícné"
+msgstr "gegenständig"
 
 #: models.py:232
 msgid "verticillate"
-msgstr "přeslenité"
+msgstr "quirlförmig"
 
 #: models.py:233
 msgid "rosette"
-msgstr "přízemní růžice"
+msgstr "rosettig"
 
 #: models.py:239
 msgid "entire"
-msgstr "celokrajný"
+msgstr "ganzrandig"
 
 #: models.py:240
 msgid "serrate"
-msgstr "pilovitý"
+msgstr "gesägt"
 
 #: models.py:241
 msgid "toothed"
-msgstr "zubatý"
+msgstr "gezähnt"
 
 #: models.py:242
 msgid "lobed"
-msgstr "vroubkovaný"
+msgstr "gelappt"
 
 #: models.py:247
 msgid "simple unseparated"
-msgstr "jednoduché nečleněné"
+msgstr "ungegliedert"
 
 #: models.py:248
 msgid "simple hand-shaped"
-msgstr "jednoduché dlanité"
+msgstr "handförmig"
 
 #: models.py:249
 msgid "simple pinnate"
-msgstr "jednoduché zpeřené"
+msgstr "gefiedert"
 
 #: models.py:250
 msgid "compound hand-shaped"
-msgstr "složené dlanité"
+msgstr "zweifach gefiedert"
 
 #: models.py:251
 msgid "compound imparipinnate"
-msgstr "složené lichozpeřené"
+msgstr "unpaarig gefiedert"
 
 #: models.py:252
 msgid "compound paripinnate"
-msgstr "složené sudozpeřené"
+msgstr "paarig gefiedert"
 
 #: models.py:257
 msgid "linear"
-msgstr "čárkovitý"
+msgstr "linealisch"
 
 #: models.py:258
 msgid "circular"
-msgstr "okrouhlý"
+msgstr "kreisrund"
 
 #: models.py:259
 msgid "oval-shaped"
-msgstr "oválný"
+msgstr "elliptisch"
 
 #: models.py:260
 msgid "egg-shaped"
-msgstr "vejčitý"
+msgstr "eiförmig"
 
 #: models.py:261
 msgid "teardrop-shaped"
-msgstr "obvejčitý"
+msgstr "verkehrt-eiförmig"
 
 #: models.py:262
 msgid "lanceolate"
-msgstr "kopinatý"
+msgstr "lanzettlich"
 
 #: models.py:263
 msgid "wedge-shaped"
-msgstr "obkopinatý"
+msgstr "verkehrt-lanzettlich"
 
 #: models.py:264
 msgid "spoon-shaped"
-msgstr "kopisťovitý"
+msgstr "spatelförmig"
 
 #: models.py:265
 msgid "triangular"
-msgstr "trojúhelnkový"
+msgstr "dreieckig"
 
 #: models.py:266
 msgid "diamond-shaped"
-msgstr "kosníkovitý"
+msgstr "rautenförmig"
 
 #: models.py:267
 msgid "heart-shaped"
-msgstr "srdčitý"
+msgstr "herzförmig"
 
 #: models.py:268
 msgid "inverse heart-shaped"
-msgstr "obsrdčitý"
+msgstr "verkehrt-herzförmig"
 
 #: models.py:269
 msgid "kidney-shaped"
-msgstr "ledvinitý"
+msgstr "nierenförmig"
 
 #: models.py:270
 msgid "arrow-shaped"
-msgstr "střelovitý"
+msgstr "pfeilförmig"
 
 #: models.py:271
 msgid "spear-shaped"
-msgstr "hrálovitý"
+msgstr "spießförmig"
 
 #: models.py:272
 msgid "pinnatisect"
-msgstr "kracovitý"
+msgstr "fiederschnittig"
 
 #: models.py:278
 msgid "single needles"
-msgstr "jednotlivé jehlice"
+msgstr "Einzelnadeln"
 
 #: models.py:279
 msgid "bundled needles"
-msgstr "skupiny jehlic"
+msgstr "Nadelgruppe"
 
 #: models.py:280
 msgid "tufted needles"
-msgstr "trsy jehlic"
+msgstr "Nadelbüschel"
 
 #: models.py:281
 msgid "scales"
-msgstr "šupinovité"
+msgstr "schuppige Nadeln"
 
 #: models.py:288
 msgid "with thorns"
-msgstr "s trny / ostny"
+msgstr "mit Dornen"
 
 #: models.py:293
 msgid "smooth"
-msgstr "hladká"
+msgstr "glatt"
 
 #: models.py:294
 msgid "lenticelas"
-msgstr "lenticely"
+msgstr "Lentizellen"
 
 #: models.py:295
 msgid "grooved"
-msgstr "rozbrázděná"
+msgstr "geriffelt"
 
 #: models.py:296
 msgid "scaly"
-msgstr "šupinatá"
+msgstr "schuppig"
 
 #: models.py:301
 msgid "legume"
-msgstr "lusk / struk"
+msgstr "Hülse"
 
 #: models.py:302
 msgid "capsule"
-msgstr "tobolka"
+msgstr "Kapsel"
 
 #: models.py:303
 msgid "silique"
-msgstr "šešule"
+msgstr "Schote"
 
 #: models.py:304
 msgid "follicle"
-msgstr "měchýřek"
+msgstr "Balgfrucht"
 
 #: models.py:305
 msgid "nut / nutlet"
-msgstr "oříšek / tvrdka"
+msgstr "Nuss / Klause"
 
 #: models.py:306
 msgid "achene"
-msgstr "nažka"
+msgstr "Achäne"
 
 #: models.py:307
 msgid "winged achene"
-msgstr "křídlatá nažka"
+msgstr "Spaltfrucht"
 
 #: models.py:308
 msgid "berries"
-msgstr "bobule"
+msgstr "Beeren"
 
 #: models.py:309
 msgid "aggregate fruits"
-msgstr "souplodí"
+msgstr "Sammelfrucht"
 
 #: models.py:310
 msgid "drupe"
-msgstr "peckovice"
+msgstr "Steinfrucht"
 
 #: models.py:311
 msgid "pome"
-msgstr "malvice"
+msgstr "Apfelfrucht"
 
 #: models.py:312
 msgid "cone"
-msgstr "šiška"
+msgstr "Kegel"
 
 #: models.py:316
 msgid "field"
-msgstr "polní"
+msgstr "Feld"
 
 #: models.py:317
 msgid "grassy"
-msgstr "travnaté"
+msgstr "Wiese"
 
 #: models.py:318
 msgid "forested"
-msgstr "lesnaté"
+msgstr "Wald"
 
 #: models.py:319
 msgid "humid"
-msgstr "vlhké"
+msgstr "Gewässer"
 
 #: models.py:320
 msgid "urban"
-msgstr "obydlené"
+msgstr "Besiedlung"
 
 #: models.py:321
 msgid "mountain"
-msgstr "horské"
+msgstr "Berge"
 
 #: models.py:331
 msgid "Latin name"
-msgstr "Latinský název"
+msgstr "Lateinischer Name"
 
 #: models.py:333
 msgid "Common name (EN)"
-msgstr "Obecný název (EN)"
+msgstr "Name (EN)"
 
 #: models.py:334
 msgid "Folk names (EN)"
-msgstr "Lidové názvy (EN)"
+msgstr "Allgemeine Namen (EN)"
 
 #: models.py:335
 msgid "Family (EN)"
-msgstr "Čeleď (EN)"
+msgstr "Familie (EN)"
 
 #: models.py:336
 msgid "Description (EN)"
-msgstr "Popis (EN)"
+msgstr "Beschreibung (EN)"
 
 #: models.py:337
 msgid "Common name (DE)"
-msgstr "Obecný název (DE)"
+msgstr "Name (DE)"
 
 #: models.py:338
 msgid "Folk names (DE)"
-msgstr "Lidové názvy (DE)"
+msgstr "Allgemeine Namen (DE)"
 
 #: models.py:339
 msgid "Family (DE)"
-msgstr "Čeleď (DE)"
+msgstr "Familie (DE)"
 
 #: models.py:340
 msgid "Description (DE)"
-msgstr "Popis (DE)"
+msgstr "Name (DE)"
 
 #: models.py:341
 msgid "Common name (CS)"
-msgstr "Obecný název (CZ)"
+msgstr "Name (CS)"
 
 #: models.py:342
 msgid "Folk names (CS)"
-msgstr "Lidové názvy (CZ)"
+msgstr "Allgemeine Namen (CS)"
 
 #: models.py:343
 msgid "Family (CS)"
-msgstr "Čeleď (CZ)"
+msgstr "Familie (CS)"
 
 #: models.py:344
 msgid "Description (CS)"
-msgstr "Popis (CZ)"
+msgstr "Name (CS)"
 
 #: models.py:351
 msgid "Is healing"
-msgstr "Léčivá"
+msgstr "Ist heilkräftig"
 
 #: models.py:352
 msgid "Is toxic"
-msgstr "Jedovatá"
+msgstr "Ist giftig"
 
 #: models.py:353
 msgid "Plant type"
-msgstr "Typ rostliny"
+msgstr "Pflanzentyp"
 
 #: models.py:354
 msgid "Min.height (cm)"
-msgstr "Min.výška (cm)"
+msgstr "Min.Höhe (cm)"
 
 #: models.py:355
 msgid "Max.height (cm)"
-msgstr "Max.výška (cm)"
+msgstr "Max.Höhe (cm)"
 
 #: models.py:357
 msgid "Predominant flower color"
-msgstr "Převládající barva květu"
+msgstr "Blütenhauptfarbe"
 
 #: models.py:358
 msgid "Flower type"
-msgstr "Typ květu"
+msgstr "Blütentyp"
 
 #: models.py:359
 msgid "Blooming from"
-msgstr "Kvete od"
+msgstr "Blüht von"
 
 #: models.py:360
 msgid "Blooming to"
-msgstr "Kvete do"
+msgstr "Blüht bis"
 
 #: models.py:361
 msgid "Min.petal count"
-msgstr "Min.počet okvětních lístků"
+msgstr "Min.Blütenblattanzahl"
 
 #: models.py:362
 msgid "Max.petal count"
-msgstr "Max.počet okvětních lístků"
+msgstr "Max.Blütenblattanzahl"
 
 #: models.py:364
 msgid "Leaf type"
-msgstr "Typ listu"
+msgstr "Blatttyp"
 
 #: models.py:365
 msgid "Leaf shape"
-msgstr "Tvar listu"
+msgstr "Blattform"
 
 #: models.py:366
 msgid "Leaf shape (alt.)"
-msgstr "Tvar listu (alt.)"
+msgstr "Blattform (alt.)"
 
 #: models.py:367
 msgid "Leaf edge"
-msgstr "Oraj listu"
+msgstr "Blattrand"
 
 #: models.py:368
 msgid "Leaf edge (alt.)"
-msgstr "Okraj listu (alt.)"
+msgstr "Blattrand (alt.)"
 
 #: models.py:369
 msgid "Leaf arrangement"
-msgstr "Umístění na stonku"
+msgstr "Blattstand"
 
 #: models.py:370
 msgid "Leaf arrangement (alt.)"
-msgstr "Umístění na stonku (alt.)"
+msgstr "Blattstand (alt.)"
 
 #: models.py:372
 msgid "Needle type"
-msgstr "Typ jehlic"
+msgstr "Nadeltyp"
 
 #: models.py:373
 msgid "Ast branching"
-msgstr "Větvení"
+msgstr "Verzweigung"
 
 #: models.py:374
 msgid "Bark type"
-msgstr "Typ borky"
+msgstr "Borkentyp"
 
 #: models.py:375
 msgid "Bark type (alt.)"
-msgstr "Typ borky (alt.)"
+msgstr "Borkentyp (alt.)"
 
 #: models.py:377
 msgid "Fruit type"
-msgstr "Typ plodu"
+msgstr "Fruchttyp"
 
 #: models.py:378
 msgid "Fruit from"
-msgstr "Plody od"
+msgstr "Frucht von"
 
 #: models.py:379
 msgid "Fruit to"
-msgstr "Plody do"
+msgstr "Frucht bis"
 
 #: models.py:384 models.py:452 models.py:593 models.py:629
 msgid "Herb"
-msgstr "Bylinka"
+msgstr "Kraut"
 
 #: models.py:385
 msgid "Herbs"
-msgstr "Bylinky"
+msgstr "Kräuter"
 
 #: models.py:402
 msgid "Pictures"
-msgstr "Obrázky"
+msgstr "Bilder"
 
 #: models.py:453
 msgid "Filename"
-msgstr "Soubor"
+msgstr "Dateiname"
 
 #: models.py:458
 msgid "Herb picture"
-msgstr "Obrázek bylinky"
+msgstr "Kräuterbild"
 
 #: models.py:459
 msgid "Herb pictures"
-msgstr "Obrázky bylinek"
+msgstr "Kräuterbilder"
 
 #: models.py:479
 msgid "Thumbnail"
-msgstr "Náhled"
+msgstr "Thumbnail"
 
 #: models.py:573
 msgid "tea"
-msgstr "čaj"
+msgstr "Tee"
 
 #: models.py:574
 msgid "inhalation"
-msgstr "inhalace"
+msgstr "Inhalation"
 
 #: models.py:575
 msgid "gargle"
-msgstr "kloktání"
+msgstr "Gurgeln"
 
 #: models.py:576
 msgid "bath"
-msgstr "koupel"
+msgstr "Bad"
 
 #: models.py:577
 msgid "ointment"
-msgstr "mast"
+msgstr "Salbe"
 
 #: models.py:578
 msgid "honey"
-msgstr "med"
+msgstr "Honig"
 
 #: models.py:579
 msgid "poultice"
-msgstr "obklad"
+msgstr "Umschlag"
 
 #: models.py:580
 msgid "oil"
-msgstr "olej"
+msgstr "Öl"
 
 #: models.py:581
 msgid "powder"
-msgstr "prášek"
+msgstr "Pulver"
 
 #: models.py:582
 msgid "syrup"
-msgstr "sirup"
+msgstr "Sirup"
 
 #: models.py:583
 msgid "liquere"
-msgstr "likér"
+msgstr "Likör"
 
 #: models.py:584
 msgid "juice"
-msgstr "šťáva"
+msgstr "Saft"
 
 #: models.py:585
 msgid "tincture"
-msgstr "tinktura"
+msgstr "Tinktur"
 
 #: models.py:586
 msgid "jam"
-msgstr "zavařenina"
+msgstr "Konfitüre"
 
 #: models.py:587
 msgid "chewing"
-msgstr "žvýkání"
+msgstr "Kauen"
 
 #: models.py:595
 msgid "Usage"
-msgstr "Užití"
+msgstr "Gebrauch"
 
 #: models.py:597 models.py:634
 msgid "Note (EN)"
-msgstr "Poznámka (EN)"
+msgstr "Notiz (EN)"
 
 #: models.py:598 models.py:635
 msgid "Note (DE)"
-msgstr "Poznámka (DE)"
+msgstr "Notiz (DE)"
 
 #: models.py:599 models.py:636
 msgid "Note (CS)"
-msgstr "Poznámka (CZ)"
+msgstr "Notiz (CS)"
 
 #: models.py:603
 msgid "Herb usage"
-msgstr "Užití bylinky"
+msgstr "Kräutergebrauch"
 
 #: models.py:604
 msgid "Herb usages"
-msgstr "Užití bylinek"
+msgstr "Kräutergebrauch"
 
 #: models.py:616
 msgid "root"
-msgstr "kořen"
+msgstr "Wurzel"
 
 #: models.py:617
 msgid "bark"
-msgstr "kůra"
+msgstr "Rinde"
 
 #: models.py:618
 msgid "flower"
-msgstr "květ"
+msgstr "Blüte"
 
 #: models.py:619
 msgid "leaf"
-msgstr "list"
+msgstr "Blatt"
 
 #: models.py:620
 msgid "needle"
-msgstr "jehlice"
+msgstr "Nadel"
 
 #: models.py:622
 msgid "fruit"
-msgstr "plod"
+msgstr "Frucht"
 
 #: models.py:623
 msgid "resin"
-msgstr "pryskyřice"
+msgstr "Harz"
 
 #: models.py:630
 msgid "Part"
-msgstr "Část"
+msgstr "Teil"
 
 #: models.py:631
 msgid "Pick from"
-msgstr "Sběr od"
+msgstr "Sammeln von"
 
 #: models.py:632
 msgid "Pick to"
-msgstr "Sběr od"
+msgstr "Sammeln bis"
 
 #: models.py:640
 msgid "Herb pick"
-msgstr "Sběr bylinky"
+msgstr "Kräutersammeln"
 
 #: models.py:641
 msgid "Herb picks"
-msgstr "Sběr bylinek"
-
-#~ msgid "Tree"
-#~ msgstr "Strom"
-
-#~ msgid "chest"
-#~ msgstr "hrudník"
-
-#~ msgid "back"
-#~ msgstr "záda"
-
-#~ msgid "blood"
-#~ msgstr "krev"
-
-#~ msgid "gynecology / urology"
-#~ msgstr "gynekologie / urologie"
-
-#~ msgid "nose"
-#~ msgstr "nos"
-
-#~ msgid "mouth"
-#~ msgstr "ústa"
-
-#~ msgid "capitulum - disc florets"
-#~ msgstr "úbor - trubkovité"
-
-#~ msgid "capitulum - ray florets"
-#~ msgstr "úbor - jazykovité"
-
-#~ msgid "compound corymb"
-#~ msgstr "chocholičnatá lata"
-
-#~ msgid "oblanceolate"
-#~ msgstr "obkopinatý"
-
-#~ msgid "inverse triangular"
-#~ msgstr "klínovitý"
-
-#~ msgid "ridged"
-#~ msgstr "zvlněná"
-
-#~ msgid "berry / aggregate drupes"
-#~ msgstr "bobule / plodenství"
+msgstr "Kräutersammeln"

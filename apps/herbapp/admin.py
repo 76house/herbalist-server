@@ -113,7 +113,7 @@ class HerbForm(CsiModelForm):
 
 class HerbAdmin(admin.ModelAdmin):
     form = HerbForm
-    list_display = [_('name_en'), 'botanical_name', _('family_en'), 'has_language_cs', 'has_language_en', 'plant_type', 'picture_thumbnails']
+    list_display = [_('name_en'), 'botanical_name', _('family_en'), 'has_language_en', 'has_language_de', 'has_language_cs', 'plant_type', 'picture_thumbnails']
     list_filter = ['plant_type']
     ordering = [_('name_en')]
     search_fields = [_('name_en')]
@@ -124,13 +124,17 @@ class HerbAdmin(admin.ModelAdmin):
         (None, {
             'fields': ('author_id', 'botanical_name', 'is_healing', 'is_toxic', 'plant_type', 'height_min', 'height_max', 'environment')
         }),
-        (_('Czech'), {
-            'classes': ('collapse','wide',),
-            'fields': ('name_cs', 'alias_cs', 'family_cs', 'description_cs')
-        }),
         (_('English'), {
             'classes': ('collapse','wide',),
             'fields': ('name_en', 'alias_en', 'family_en', 'description_en')
+        }),
+        (_('German'), {
+            'classes': ('collapse','wide',),
+            'fields': ('name_de', 'alias_de', 'family_de', 'description_de')
+        }),
+        (_('Czech'), {
+            'classes': ('collapse','wide',),
+            'fields': ('name_cs', 'alias_cs', 'family_cs', 'description_cs')
         }),
         (_('Flower'), {
             'fields': ('flower_color', 'flower_type', 'blooming_from', 'blooming_to', 'petal_mincount', 'petal_maxcount')
@@ -138,7 +142,7 @@ class HerbAdmin(admin.ModelAdmin):
         (_('Leaf'), {
             'fields': ('leaf_type', 'leaf_shape', 'leaf_shape_alt', 'leaf_edge', 'leaf_edge_alt', 'leaf_arrangement', 'leaf_arrangement_alt')
         }),
-        (_('Tree'), {
+        (_('Shrub / tree'), {
             'fields': ('needle_type', 'branching', 'bark_type', 'bark_type_alt')
         }),
         (_('Fruit'), {
