@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Herbalist\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2013-11-16 13:16+0100\n"
-"PO-Revision-Date: 2013-11-16 13:20+0100\n"
-"Last-Translator: Martin Marek <martin.marek@carabana.cz>\n"
+"PO-Revision-Date: 2013-11-25 21:07+0100\n"
+"Last-Translator: Martin Marek <76house@centrum.cz>\n"
 "Language-Team: Herbalist team\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
@@ -722,7 +722,7 @@ msgstr "Tvar listu (alt.)"
 
 #: models.py:367
 msgid "Leaf edge"
-msgstr "Oraj listu"
+msgstr "Okraj listu"
 
 #: models.py:368
 msgid "Leaf edge (alt.)"
