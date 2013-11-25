@@ -15,6 +15,7 @@
                     $("#fieldset-6").show(); // leaf
                     $("#fieldset-7").hide(); // shrub/tree
                     $(".field-leaf_arrangement").show();
+                    $(".field-leaf_arrangement_alt").show();
                 } break;
 
                 case "2":
@@ -24,6 +25,7 @@
                     $("#fieldset-6").show(); // leaf
                     $("#fieldset-7").show(); // shrub/tree
                     $(".field-leaf_arrangement").hide();
+                    $(".field-leaf_arrangement_alt").hide();
                     $(".field-needle_type").hide();
                     $(".field-branching").show();
                     $(".field-bark_type").hide();
@@ -37,6 +39,7 @@
                     $("#fieldset-6").hide(); // leaf
                     $("#fieldset-7").show(); // shrub/tree
                     $(".field-leaf_arrangement").hide();
+                    $(".field-leaf_arrangement_alt").hide();
                     $(".field-needle_type").show();
                     $(".field-branching").hide();
                     $(".field-bark_type").hide();
@@ -50,6 +53,7 @@
                     $("#fieldset-6").show(); // leaf
                     $("#fieldset-7").show(); // shrub/tree
                     $(".field-leaf_arrangement").hide();
+                    $(".field-leaf_arrangement_alt").hide();
                     $(".field-needle_type").hide();
                     $(".field-branching").show();
                     $(".field-bark_type").show();
@@ -63,6 +67,7 @@
                     $("#fieldset-6").hide(); // leaf
                     $("#fieldset-7").show(); // shrub/tree
                     $(".field-leaf_arrangement").hide();
+                    $(".field-leaf_arrangement_alt").hide();
                     $(".field-needle_type").show();
                     $(".field-branching").hide();
                     $(".field-bark_type").show();
