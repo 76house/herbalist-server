@@ -18,9 +18,9 @@ from tastypie.resources import Resource, ModelResource, ALL
 from tastypie.authentication import Authentication
 from tastypie.authorization import Authorization
 
-from Crypto.Signature import PKCS1_v1_5
-from Crypto.Hash import SHA
-from Crypto.PublicKey import RSA
+#from Crypto.Signature import PKCS1_v1_5
+#from Crypto.Hash import SHA
+#from Crypto.PublicKey import RSA
 
 from herbapp.models import Purchase, Author, Disease, Herb, HerbPicture, HerbUsage, HerbPick
 
@@ -90,7 +90,7 @@ class PurchaseResource(ModelResource):
 
                 ts = datetime.now()
                 token = hashlib.sha1(client_id + str(random.random()) + ts.strftime("%Y%m%dT%H%M%S")).hexdigest()
-                token_data = {"token" : token}
+                token_data = {"token" : token, "time" : ts.strftime("%s")}
                 log.debug("token: %s" % token)
 
                 # store or update token for related client_id ID
@@ -112,6 +112,7 @@ class PurchaseResource(ModelResource):
                     status = 201
                 
                 # 200 OK / 201 Created (verification successful)
+                print token_data
                 response = HttpResponse(json.dumps(token_data) + "\n", mimetype="application/json", status=status)
 
             else:
