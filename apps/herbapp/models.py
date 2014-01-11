@@ -59,13 +59,15 @@ def make_property(k):
 
 class Purchase(models.Model):
 
-    order           = models.CharField(max_length=32, verbose_name=_('Order'), primary_key=True) # purchase ID
+    client_id       = models.CharField(max_length=48, verbose_name=_('Client ID'), primary_key=True) # client ID
     token           = models.CharField(max_length=64, verbose_name=_('Token')) # token generated from signature and timestamp
     last_sync_ts    = models.DateTimeField(default=datetime.now, verbose_name=_('Last sync time')) # time of last successful synchronization (seconds)
-    app_version     = models.IntegerField(default=0, verbose_name=_('Client version')) # client application: version
+    app_version     = models.CharField(default='', max_length=16, verbose_name=_('Client version')) # client application: version
     app_platform    = models.CharField(default='', max_length=16, verbose_name=_('Client platform')) # client application: host OS name and version
     app_language    = models.CharField(default='', max_length=2, verbose_name=_('Language')) # client application: language code
+    app_region      = models.CharField(default='', max_length=64, verbose_name=_('Region')) # client application: region
     screen_width    = models.IntegerField(default=0, verbose_name=_('Screen width')) # client device: max.screen width
+    screen_height   = models.IntegerField(default=0, verbose_name=_('Screen height')) # client device: max.screen height
     counter         = models.IntegerField(default=0, verbose_name=_('Request count')) # how many times the auth request has been called by this client
 
     class Meta:
@@ -73,7 +75,7 @@ class Purchase(models.Model):
         verbose_name_plural = _('Purchases')
 
     def __unicode__(self):
-        return "%s" % self.order
+        return "%s" % self.client_id
 
 
 # ------------------------------------------------------------------------------

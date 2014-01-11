@@ -56,7 +56,7 @@ class PurchaseResource(ModelResource):
     """
     class Meta:
         queryset = Purchase.objects.all()
-        fields = ['token','order']
+        fields = ['token','client_id']
         list_allowed_methods = ['post']
         detail_allowed_methods = []
         resource_name = 'purchase'
@@ -71,40 +71,42 @@ class PurchaseResource(ModelResource):
         try:
             # parse JSON data from POST request
             data = json.loads(request.raw_post_data)
-            purchase_data = data.get("inapp-purchase-data")
-            purchase_data_dump = json.dumps(purchase_data, separators=(',', ':'), sort_keys=True)
-            data_signature = data.get("inapp-data-signature")
 
-            # verify that signature is the result of signing the purchase data
-            VERIFY_KEY = RSA.importKey(base64.decodestring(settings.PUBLIC_KEY))
-            h = SHA.new(purchase_data_dump)
-            verifier = PKCS1_v1_5.new(VERIFY_KEY)
-            signature = base64.decodestring(data_signature)
-            verify_ok = verifier.verify(h, signature)
-            log.debug("verified: %r" % verify_ok)
+            # android stuff - not used
+            #purchase_data = data.get("inapp-purchase-data")
+            #purchase_data_dump = json.dumps(purchase_data, separators=(',', ':'), sort_keys=True)
+            #order = purchase_data.get('orders')[0].get('orderId')
+            #data_signature = data.get("inapp-data-signature")
+            ## verify that signature is the result of signing the purchase data
+            #VERIFY_KEY = RSA.importKey(base64.decodestring(settings.PUBLIC_KEY))
+            #h = SHA.new(purchase_data_dump)
+            #verifier = PKCS1_v1_5.new(VERIFY_KEY)
+            #signature = base64.decodestring(data_signature)
+            #verify_ok = verifier.verify(h, signature)
+            #log.debug("verified: %r" % verify_ok)
             
-            if True: # TODO verify_ok
+            client_id = data.get("client-id")
+            if client_id != "":
 
-                # data / signature is correct
                 ts = datetime.now()
-                order = purchase_data.get('orders')[0].get('orderId')
-
-                token = hashlib.sha1(data_signature + str(random.random()) + ts.strftime("%Y%m%dT%H%M%S")).hexdigest()
+                token = hashlib.sha1(client_id + str(random.random()) + ts.strftime("%Y%m%dT%H%M%S")).hexdigest()
                 token_data = {"token" : token}
                 log.debug("token: %s" % token)
 
-                # store or update token for related order ID
-                purchase, created = Purchase.objects.get_or_create(order=order)
-                purchase.order = order
+                # store or update token for related client_id ID
+                purchase, created = Purchase.objects.get_or_create(client_id=client_id)
                 purchase.token = token
+                purchase.client_id = client_id
                 purchase.app_platform = data.get('client-platform')
                 purchase.app_version = data.get('client-version')
                 purchase.app_language = data.get('client-language')
+                purchase.app_region = data.get('client-region')
                 purchase.screen_width = data.get('screen-width')
+                purchase.screen_height = data.get('screen-height')
                 purchase.last_sync_ts = ts
                 purchase.counter = purchase.counter + 1
                 purchase.save()
-                
+
                 status = 200
                 if created:
                     status = 201

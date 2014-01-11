@@ -32,7 +32,7 @@ class CsiModelForm(ModelForm):
 # ------------------------------------------------------------------------------
 
 class PurchaseAdmin(admin.ModelAdmin):
-    list_display = ['order', 'token', 'app_platform', 'app_version', 'app_language', 'screen_width', 'last_sync_ts', 'counter']
+    list_display = ['client_id', 'token', 'app_platform', 'app_version', 'app_language', 'app_region', 'screen_width', 'screen_height', 'last_sync_ts', 'counter']
     ordering = ['-last_sync_ts']
 
 
