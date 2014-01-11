@@ -113,7 +113,7 @@ class HerbForm(CsiModelForm):
 
 class HerbAdmin(admin.ModelAdmin):
     form = HerbForm
-    list_display = [_('name_en'), 'botanical_name', _('family_en'), 'has_language_en', 'has_language_de', 'has_language_cs', 'plant_type', 'picture_thumbnails']
+    list_display = [_('name_en'), 'botanical_name', 'has_language_en', 'has_language_de', 'has_language_cs', 'plant_type', 'picture_thumbnails']
     list_filter = ['plant_type']
     ordering = [_('name_en')]
     search_fields = [_('name_en')]
@@ -126,15 +126,15 @@ class HerbAdmin(admin.ModelAdmin):
         }),
         (_('English'), {
             'classes': ('collapse','wide',),
-            'fields': ('name_en', 'alias_en', 'family_en', 'description_en')
+            'fields': ('name_en', 'alias_en', 'description_en')
         }),
         (_('German'), {
             'classes': ('collapse','wide',),
-            'fields': ('name_de', 'alias_de', 'family_de', 'description_de')
+            'fields': ('name_de', 'alias_de', 'description_de')
         }),
         (_('Czech'), {
             'classes': ('collapse','wide',),
-            'fields': ('name_cs', 'alias_cs', 'family_cs', 'description_cs')
+            'fields': ('name_cs', 'alias_cs', 'description_cs')
         }),
         (_('Flower'), {
             'fields': ('flower_color', 'flower_type', 'blooming_from', 'blooming_to', 'petal_mincount', 'petal_maxcount')

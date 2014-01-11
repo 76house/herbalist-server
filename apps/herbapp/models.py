@@ -406,21 +406,21 @@ class Herb(models.Model):
 
     # displays a bullet if English texts are complete
     def has_language_en(self):
-        if (self.name_en != "" and self.alias_en != "" and self.family_en != "" and self.description_en != ""):
+        if (self.name_en != "" and self.alias_en != "" and self.description_en != ""):
             return '<span style="font-size: 16pt;">&bull;</span>'
         else:
             return ""
 
     # displays a bullet if German texts are complete
     def has_language_de(self):
-        if (self.name_de != "" and self.alias_de != "" and self.family_de != "" and self.description_de != ""):
+        if (self.name_de != "" and self.alias_de != "" and self.description_de != ""):
             return '<span style="font-size: 16pt;">&bull;</span>'
         else:
             return ""
 
     # displays a bullet if Czech texts are complete
     def has_language_cs(self):
-        if (self.name_cs != "" and self.alias_cs != "" and self.family_cs != "" and self.description_cs != ""):
+        if (self.name_cs != "" and self.alias_cs != "" and self.description_cs != ""):
             return '<span style="font-size: 16pt;">&bull;</span>'
         else:
             return ""
