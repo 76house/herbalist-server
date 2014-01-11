@@ -85,7 +85,7 @@ class PurchaseResource(ModelResource):
             #verify_ok = verifier.verify(h, signature)
             #log.debug("verified: %r" % verify_ok)
             
-            client_id = data.get("client-id")
+            client_id = data.get("client_id")
             if client_id != "":
 
                 ts = datetime.now()
@@ -97,12 +97,12 @@ class PurchaseResource(ModelResource):
                 purchase, created = Purchase.objects.get_or_create(client_id=client_id)
                 purchase.token = token
                 purchase.client_id = client_id
-                purchase.app_platform = data.get('client-platform')
-                purchase.app_version = data.get('client-version')
-                purchase.app_language = data.get('client-language')
-                purchase.app_region = data.get('client-region')
-                purchase.screen_width = data.get('screen-width')
-                purchase.screen_height = data.get('screen-height')
+                purchase.app_platform = data.get('client_platform')
+                purchase.app_version = data.get('client_version')
+                purchase.app_language = data.get('client_language')
+                purchase.app_region = data.get('client_region')
+                purchase.screen_width = data.get('screen_width')
+                purchase.screen_height = data.get('screen_height')
                 purchase.last_sync_ts = ts
                 purchase.counter = purchase.counter + 1
                 purchase.save()
