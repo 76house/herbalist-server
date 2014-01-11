@@ -6,4 +6,6 @@
 *.sqlite
 local_settings.py
 .sass-cache
-logfile
+logfile*
+
+
