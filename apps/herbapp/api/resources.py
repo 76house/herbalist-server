@@ -15,6 +15,7 @@ from tastypie import fields
 from tastypie.exceptions import NotFound
 from tastypie.models import ApiKey
 from tastypie.resources import Resource, ModelResource, ALL
+from tastypie.serializers import Serializer
 from tastypie.authentication import Authentication
 from tastypie.authorization import Authorization
 
@@ -45,6 +46,12 @@ class TokenAuthentication(Authentication):
             return False
         except:
             return False
+
+
+# custom serializer to provide numeric timestamps
+class CustomSerializer(Serializer):
+    def format_datetime(self, data):
+        return data.strftime("%s")
 
 
 class PurchaseResource(ModelResource):
@@ -135,6 +142,7 @@ class AuthorResource(ModelResource):
         allowed_methods = ['get']
         filtering = { "timestamp": ('gt',) }
         resource_name = 'author'
+        serializer = CustomSerializer()
         authentication = TokenAuthentication()
 
 
@@ -154,6 +162,7 @@ class DiseaseResource(ModelResource):
         allowed_methods = ['get']
         filtering = { "timestamp": ('gt',) }
         resource_name = 'disease'
+        serializer = CustomSerializer()
         authentication = TokenAuthentication()
 
     def build_filters(self, filters=None):
@@ -174,6 +183,7 @@ class HerbResource(ModelResource):
         allowed_methods = ['get']
         filtering = { "timestamp": ('gt',) }
         resource_name = 'herb'
+        serializer = CustomSerializer()
         authentication = TokenAuthentication()
 
     def build_filters(self, filters=None):
@@ -197,6 +207,7 @@ class HerbPictureResource(ModelResource):
         allowed_methods = ['get']
         filtering = { "timestamp": ('gt',) }
         resource_name = 'herb-picture'
+        serializer = CustomSerializer()
         authentication = TokenAuthentication()
         excludes = ['picture']
 
@@ -230,6 +241,7 @@ class HerbUsageResource(ModelResource):
         allowed_methods = ['get']
         filtering = { "timestamp": ('gt',) }
         resource_name = 'herb-usage'
+        serializer = CustomSerializer()
         authentication = TokenAuthentication()
 
     def build_filters(self, filters=None):
@@ -250,6 +262,7 @@ class HerbPickResource(ModelResource):
         allowed_methods = ['get']
         filtering = { "timestamp": ('gt',) }
         resource_name = 'herb-pick'
+        serializer = CustomSerializer()
         authentication = TokenAuthentication()
 
     def build_filters(self, filters=None):
