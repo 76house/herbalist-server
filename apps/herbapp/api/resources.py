@@ -226,7 +226,13 @@ class HerbPictureResource(ModelResource):
         return super(HerbPictureResource, self).obj_get_list()
     
     def dehydrate(self, bundle):
-        bundle.data['url'] = "http://%s%s" % (Site.objects.get_current().domain, os.path.join(settings.MEDIA_URL, bundle.obj.url(self.screen_width)))
+        # serve appropriate image size, based of given screen width
+        width = 1080
+        if self.screen_width <= 480:
+            width = 480
+        elif self.screen_width <= 768:
+            width = 768
+        bundle.data['url'] = "http://%s%s" % (Site.objects.get_current().domain, os.path.join(settings.MEDIA_URL, bundle.obj.url(width)))
         return bundle
 
 
