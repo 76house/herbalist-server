@@ -447,7 +447,7 @@ class HerbPicture(models.Model):
     PICTURE_NAME_LENGTH = 16
 
     # picture widths for various devices
-    PICTURE_WIDTHS = (480, 768, 1080)
+    PICTURE_WIDTHS = (120, 480, 768, 1080)
 
     _id             = models.AutoField(primary_key=True)
     author_id       = models.ForeignKey('herbapp.Author', default=1, verbose_name=_('Author'))

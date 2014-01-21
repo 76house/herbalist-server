@@ -227,7 +227,9 @@ class HerbPictureResource(ModelResource):
     
     def dehydrate(self, bundle):
         # serve appropriate image size, based of given screen width
-        width = 1080
+        width = 0
+        if self.screen_width <= 120:
+            width = 120
         if self.screen_width <= 480:
             width = 480
         elif self.screen_width <= 768:
