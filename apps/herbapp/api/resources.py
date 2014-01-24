@@ -219,11 +219,13 @@ class HerbPictureResource(ModelResource):
             orm_filters['timestamp__gt'] = datetime.fromtimestamp(float(filters['timestamp__gt']))
         return orm_filters
 
-    def obj_get_list(self, request=None, **kwargs):
-        token = request.GET.get('token')
+    def obj_get_list(self, bundle, **kwargs):
+        #def obj_get_list(self, request=None, **kwargs):
+        #token = request.GET.get('token')
+        token = bundle.request.GET['token']
         purchase = Purchase.objects.get(token=token)
         self.screen_width = purchase.screen_width
-        return super(HerbPictureResource, self).obj_get_list()
+        return super(HerbPictureResource, self).obj_get_list(bundle)
     
     def dehydrate(self, bundle):
         # serve appropriate image size, based of given screen width
