@@ -113,7 +113,7 @@ class HerbForm(CsiModelForm):
 
 class HerbAdmin(admin.ModelAdmin):
     form = HerbForm
-    list_display = [_('name_en'), 'botanical_name', 'has_language_en', 'has_language_de', 'has_language_cs', 'plant_type', 'picture_thumbnails']
+    list_display = ['name_status', 'botanical_name', 'has_language_en', 'has_language_de', 'has_language_cs', 'plant_type', 'picture_thumbnails']
     list_filter = ['plant_type']
     ordering = [_('name_en')]
     search_fields = [_('name_en')]
@@ -122,7 +122,7 @@ class HerbAdmin(admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-            'fields': ('author_id', 'botanical_name', 'is_healing', 'is_toxic', 'plant_type', 'height_min', 'height_max', 'environment')
+            'fields': ('is_draft', 'author_id', 'botanical_name', 'is_healing', 'is_toxic', 'plant_type', 'height_min', 'height_max', 'environment')
         }),
         (_('English'), {
             'classes': ('collapse','wide',),

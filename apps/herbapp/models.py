@@ -328,6 +328,7 @@ class Herb(models.Model):
     __metaclass__   = LocalizeModelBase
 
     _id             = models.AutoField(primary_key=True)
+    is_draft        = models.BooleanField(default=True, verbose_name=_('Draft'))
     author_id       = models.ForeignKey('herbapp.Author', default=1, verbose_name=_('Author'))
     timestamp       = models.DateTimeField(default=datetime.now, editable=False) # last change
     botanical_name  = models.CharField(max_length=40, unique=True, verbose_name=_('Latin name'))
@@ -404,6 +405,13 @@ class Herb(models.Model):
     picture_thumbnails.short_description = _('Pictures')
     picture_thumbnails.allow_tags = True
 
+    # displays localized herb name and status (draft / published)
+    def name_status(self):
+        if (self.is_draft):
+            return self.name + ' <span style="padding: 0.1em 0.3em; background: #5c9425; color: #fff; font-size: 0.9em; border-radius: 3px;">DRAFT</span>'
+        else:
+            return self.name
+
     # displays a bullet if English texts are complete
     def has_language_en(self):
         if (self.name_en != "" and self.alias_en != "" and self.description_en != ""):
@@ -425,6 +433,8 @@ class Herb(models.Model):
         else:
             return ""
 
+    name_status.short_description = _('Name')
+    name_status.allow_tags = True
     has_language_en.short_description = 'EN'
     has_language_de.short_description = 'DE'
     has_language_cs.short_description = 'CZ'
