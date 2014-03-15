@@ -80,12 +80,14 @@
         // init fields
         $("#id_plant_type").css("background-color", "#f0f0a0").click();
         $("#id_botanical_name").css("font-weight", "bold");
+        $(".field-is_draft")
+          .css("margin-bottom", "40px");
         $(".field-is_draft label")
           .css("color", "#fff")
           .css("background", "#5c9425")
           .css("padding", "0.1em 0.3em")
-          .css("float", "right")
           .css("border-radius", "3px")
+          .css("width", "3.5em")
           .css("font-size", "0.9em")
           .css("text-transform", "uppercase");
     });
