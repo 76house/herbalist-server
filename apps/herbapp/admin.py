@@ -7,7 +7,10 @@ from django.http import HttpResponseRedirect
 from django.forms import ModelForm, MultipleChoiceField, CheckboxSelectMultiple
 from django.utils.translation import get_language, ugettext as _
 from herbapp.models import Purchase, Author, Disease, Herb, HerbPicture, HerbUsage, HerbPick, \
-    ENVIRONMENT_CHOICES, AGE_CHOICES, DISEASE_TYPE_CHOICES, BODY_PART_CHOICES, HEAD_PART_CHOICES
+    ENVIRONMENT_CHOICES, AGE_CHOICES, DISEASE_TYPE_CHOICES, BODY_PART_CHOICES, HEAD_PART_CHOICES, \
+    EFFECT_SKIN_CHOICES, EFFECT_MUSCULAR_CHOICES, EFFECT_RESPIRATORY_CHOICES, EFFECT_CARDIO_CHOICES, \
+    EFFECT_DIGESTIVE_CHOICES, EFFECT_REPRO_CHOICES, EFFECT_INFECTION_CHOICES
+
 
 
 # ------------------------------------------------------------------------------
@@ -101,12 +104,40 @@ class HerbUsageInline(admin.TabularInline):
 
 class HerbForm(CsiModelForm):
     environment = MultipleChoiceField(choices=ENVIRONMENT_CHOICES, widget=CheckboxSelectMultiple(), required=True, label=_('Environment'))
+    effect_skin        = MultipleChoiceField(choices=EFFECT_SKIN_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Skin'))
+    effect_muscular    = MultipleChoiceField(choices=EFFECT_MUSCULAR_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Muscular and nervous system'))
+    effect_respiratory = MultipleChoiceField(choices=EFFECT_RESPIRATORY_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Respiratory system'))
+    effect_cardio      = MultipleChoiceField(choices=EFFECT_CARDIO_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Cardiovascular system'))
+    effect_digestive   = MultipleChoiceField(choices=EFFECT_DIGESTIVE_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Digestive and excretory system'))
+    effect_repro       = MultipleChoiceField(choices=EFFECT_REPRO_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Reproductive system'))
+    effect_infection   = MultipleChoiceField(choices=EFFECT_INFECTION_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Infections'))
 
     class Meta:
         model = Herb
 
     def clean_environment(self): 
         return self.clean_csi('environment')
+
+    def clean_effect_skin(self): 
+        return self.clean_csi('effect_skin')
+
+    def clean_effect_muscular(self): 
+        return self.clean_csi('effect_muscular')
+
+    def clean_effect_respiratory(self): 
+        return self.clean_csi('effect_respiratory')
+
+    def clean_effect_cardio(self): 
+        return self.clean_csi('effect_cardio')
+
+    def clean_effect_digestive(self): 
+        return self.clean_csi('effect_digestive')
+
+    def clean_effect_repro(self): 
+        return self.clean_csi('effect_repro')
+
+    def clean_effect_infection(self): 
+        return self.clean_csi('effect_infection')
 
 
 # ------------------------------------------------------------------------------
@@ -147,6 +178,10 @@ class HerbAdmin(admin.ModelAdmin):
         }),
         (_('Fruit'), {
             'fields': ('fruit_type', 'fruit_from', 'fruit_to')
+        }),
+        (_('Effects'), {
+            'classes': ('collapse',),
+            'fields': ('effect_skin', 'effect_muscular', 'effect_respiratory', 'effect_cardio', 'effect_digestive', 'effect_repro', 'effect_infection')
         }),
     )
 

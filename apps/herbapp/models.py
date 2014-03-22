@@ -323,6 +323,89 @@ ENVIRONMENT_CHOICES = (
     (6, _('mountain')),
 )
 
+EFFECT_SKIN_CHOICES = (
+    (1, _('antihydrotic (reduces perspiration)')),
+    (2, _('antiseptic (prevents sepsis or putrefaction)')),
+    (3, _('deodorant (masks smells)')),
+    (4, _('diaphoretic (induces perspiration)')),
+    (5, _('disinfectant (cleans wounds)')),
+    (6, _('emollient (softens and moistures the skin)')),
+    (7, _('febrifuge (reduces fevers)')),
+    (8, _('rubefacient (produces inflammation and redness of the skin)')),
+    (9, _('vulnerary (promotes the healing of wounds)')),
+)
+
+EFFECT_MUSCULAR_CHOICES = (
+    (1, _('anaesthetic (numbs the feeling in the body)')),
+    (2, _('analgesic (relieves pain)')),
+    (3, _('antispasmodic (relaxes muscular spasms and cramps)')),
+    (4, _('astringent (produces contraction in living tissue)')),
+    (5, _('nervine (stimulates and calms the nerves)')),
+    (6, _('aromatherapeutic')),
+    (7, _('hallucinogenic')),
+    (8, _('hypnotic (induces sleep)')),
+    (9, _('refrigerant (cools the body)')),
+    (10, _('sedative (reduces nervousness and irritation)')),
+    (11, _('stimulant (excites or quickens activity of the physiological processes)')),
+    (12, _('tonic (improves general health)')),
+)
+
+EFFECT_RESPIRATORY_CHOICES = (
+    (1, _('antitussive (relieves coughing)')),
+    (2, _('balsamic (soothing agent)')),
+    (3, _('decongestant (removes phlegm and mucous)')),
+    (4, _('expectorant (clears phlegm from the chest by inducing coughing)')),
+    (5, _('pectoral (relieves respiratory diseases)')),
+)
+
+EFFECT_CARDIO_CHOICES = (
+    (1, _('antianaemic (blood tonic)')),
+    (2, _('anticholesterolemic (prevents the build up of cholesterol)')),
+    (3, _('blood purifier')),
+    (4, _('cardiac (used in the treatment of heart problems)')),
+    (5, _('cardiotonic (stimulates blood circulation)')),
+    (6, _('haemostatic (controls internal bleeding)')),
+    (7, _('hypertensive (increases blood pressure)')),
+    (8, _('hypoglycaemic (reduces the levels of sugar in the blood)')),
+    (9, _('hypotensive (reduces blood pressure)')),
+    (10, _('vasoconstrictor (narrows the blood vessels)')),
+    (11, _('vasodilator (widens the blood vessels)')),
+)
+
+EFFECT_DIGESTIVE_CHOICES = (
+    (1, _('antidiarrhoeal')),
+    (2, _('antiemetic (prevents vomiting)')),
+    (3, _('appetizer (improves the appetite)')),
+    (4, _('bitter (increases the appetite and stimulates digestion)')),
+    (5, _('carminative (reduces flatulence and expels gas from the intestines)')),
+    (6, _('cholagogue (increases the flow of bile)')),
+    (7, _('depurative (eliminates toxins and purifies the organism)')),
+    (8, _('diuretic (promotes the flow of urine)')),
+    (9, _('hepatic (acts on the liver)')),
+    (10, _('laxative (stimulates bowel movements)')),
+    (11, _('lithontripic (removes stones from kidney or bladder)')),
+    (12, _('stomachic (improves the action of the stomach)')),
+)
+
+EFFECT_REPRO_CHOICES = (
+    (1, _('abortifacient (causes an abortion)')),
+    (2, _('anaphrodisiac (reduces sexual desire)')),
+    (3, _('aphrodisiac (increases the sexual appetite)')),
+    (4, _('contraceptive (prevents fertilization)')),
+    (5, _('emmenagogue (promotes or increases the menstrual flow)')),
+    (6, _('galactofuge (reduces the flow of milk in a nursing mother)')),
+    (7, _('galactogogue (promotes the flow of milk in a nursing mother)')),
+    (8, _('uterine tonic (stimulates uterine contractions during the birth)')),
+)
+
+EFFECT_INFECTION_CHOICES = (
+    (1, _('antibacterial')),
+    (2, _('antibiotic (inhibits infections)')),
+    (3, _('antiinflammatory')),
+    (4, _('antiviral')),
+    (5, _('parasiticide (kills internal parasites)')),
+)
+
 
 class Herb(models.Model):
     __metaclass__   = LocalizeModelBase
@@ -382,6 +465,14 @@ class Herb(models.Model):
     fruit_to        = models.IntegerField(choices = MONTH_CHOICES, default=0, verbose_name=_('Fruit to'))
 
     environment     = models.CommaSeparatedIntegerField(max_length=15, default='', verbose_name=_('Environment')) # list of ENVIRONMENT_CHOICES
+
+    effect_skin        = models.CommaSeparatedIntegerField(max_length=30, default='', verbose_name=_('Skin'))                           # list of EFFECT_SKIN_CHOICES
+    effect_muscular    = models.CommaSeparatedIntegerField(max_length=30, default='', verbose_name=_('Muscular and nervous system'))    # list of EFFECT_MUSCULAR_CHOICES
+    effect_respiratory = models.CommaSeparatedIntegerField(max_length=30, default='', verbose_name=_('Respiratory system'))             # list of EFFECT_RESPIRATORY_CHOICES
+    effect_cardio      = models.CommaSeparatedIntegerField(max_length=30, default='', verbose_name=_('Cardiovascular system'))          # list of EFFECT_CARDIO_CHOICES
+    effect_digestive   = models.CommaSeparatedIntegerField(max_length=30, default='', verbose_name=_('Digestive and excretory system')) # list of EFFECT_DIGESTIVE_CHOICES
+    effect_repro       = models.CommaSeparatedIntegerField(max_length=30, default='', verbose_name=_('Reproductive system'))            # list of EFFECT_REPRO_CHOICES
+    effect_infection   = models.CommaSeparatedIntegerField(max_length=30, default='', verbose_name=_('Infections'))                     # list of EFFECT_INFECTION_CHOICES
 
     class Meta:
         verbose_name = _('Herb')

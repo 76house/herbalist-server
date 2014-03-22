@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Herbalist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-01-21 20:19+0100\n"
-"PO-Revision-Date: 2014-01-21 20:20+0100\n"
+"POT-Creation-Date: 2014-03-22 20:44+0100\n"
+"PO-Revision-Date: 2014-03-22 21:16+0100\n"
 "Last-Translator: Martin Marek <76house@centrum.cz>\n"
 "Language-Team: Herbalist team\n"
 "Language: cs\n"
@@ -19,58 +19,90 @@ msgstr ""
 "X-Poedit-SourceCharset: utf-8\n"
 "X-Generator: Poedit 1.5.4\n"
 
-#: admin.py:51 models.py:151
+#: admin.py:54 models.py:151
 msgid "Age group"
 msgstr "Věková skupina"
 
-#: admin.py:52 models.py:152 models.py:172
+#: admin.py:55 models.py:152 models.py:172
 msgid "Type"
 msgstr "Typ"
 
-#: admin.py:54 models.py:153
+#: admin.py:57 models.py:153
 msgid "Body parts"
 msgstr "Části těla"
 
-#: admin.py:55 models.py:154
+#: admin.py:58 models.py:154
 msgid "Head parts"
 msgstr "Části hlavy"
 
-#: admin.py:77 admin.py:78 admin.py:79 admin.py:116 admin.py:118 admin.py:119
-#: models.py:159 models.py:388
+#: admin.py:80 admin.py:81 admin.py:82 admin.py:149 admin.py:150 models.py:159
+#: models.py:480
 msgid "name_en"
 msgstr "name_cs"
 
-#: admin.py:103 models.py:383
+#: admin.py:106 models.py:467
 msgid "Environment"
 msgstr "Prostředí"
 
-#: admin.py:127
+#: admin.py:107 models.py:469
+msgid "Skin"
+msgstr "Kůže"
+
+#: admin.py:108 models.py:470
+msgid "Muscular and nervous system"
+msgstr "Pohybová a nervová soustava"
+
+#: admin.py:109 models.py:471
+msgid "Respiratory system"
+msgstr "Dýchací soustava"
+
+#: admin.py:110 models.py:472
+msgid "Cardiovascular system"
+msgstr "Kardiovaskulární soustava"
+
+#: admin.py:111 models.py:473
+msgid "Digestive and excretory system"
+msgstr "Trávicí a vylučovací soustava"
+
+#: admin.py:112 models.py:474
+msgid "Reproductive system"
+msgstr "Rozmnožovací soustava"
+
+#: admin.py:113 models.py:475
+msgid "Infections"
+msgstr "Infekce"
+
+#: admin.py:158
 msgid "English"
 msgstr "Anglicky"
 
-#: admin.py:131
+#: admin.py:162
 msgid "German"
 msgstr "Německy"
 
-#: admin.py:135
+#: admin.py:166
 msgid "Czech"
 msgstr "Česky"
 
-#: admin.py:139
+#: admin.py:170
 msgid "Flower"
 msgstr "Květ"
 
-#: admin.py:142
+#: admin.py:173
 msgid "Leaf"
 msgstr "List"
 
-#: admin.py:145
+#: admin.py:176
 msgid "Shrub / tree"
 msgstr "Keř / strom"
 
-#: admin.py:148
+#: admin.py:179
 msgid "Fruit"
 msgstr "Plod"
+
+#: admin.py:182
+msgid "Effects"
+msgstr "Účinky"
 
 #: models.py:62
 msgid "Client ID"
@@ -120,11 +152,11 @@ msgstr "Nákup"
 msgid "Purchases"
 msgstr "Nákupy"
 
-#: models.py:88
+#: models.py:88 models.py:527
 msgid "Name"
 msgstr "Jméno"
 
-#: models.py:92 models.py:331 models.py:453
+#: models.py:92 models.py:415 models.py:554
 msgid "Author"
 msgstr "Autor"
 
@@ -236,7 +268,7 @@ msgstr "Jméno (CZ)"
 msgid "Affected sex"
 msgstr "Postihuje pohlaví"
 
-#: models.py:157 models.py:596
+#: models.py:157 models.py:697
 msgid "Disease"
 msgstr "Zdravotní potíž"
 
@@ -244,7 +276,7 @@ msgstr "Zdravotní potíž"
 msgid "Diseases"
 msgstr "Zdravotní potíže"
 
-#: models.py:180 models.py:623
+#: models.py:180 models.py:724
 msgid "herb"
 msgstr "bylina"
 
@@ -616,315 +648,567 @@ msgstr "obydlené"
 msgid "mountain"
 msgstr "horské"
 
+#: models.py:327
+msgid "antihydrotic (reduces perspiration)"
+msgstr "antiperspirant (potlačuje pocení)"
+
+#: models.py:328
+msgid "antiseptic (prevents sepsis or putrefaction)"
+msgstr "antiseptický (potlačuje lokální bakteriální infekci)"
+
+#: models.py:329
+msgid "deodorant (masks smells)"
+msgstr "deodorantní (odstraňuje pachy)"
+
+#: models.py:330
+msgid "diaphoretic (induces perspiration)"
+msgstr "diaforetický (provokující pocení)"
+
+#: models.py:331
+msgid "disinfectant (cleans wounds)"
+msgstr "dezinfekční (čistí rány)"
+
+#: models.py:332
+msgid "emollient (softens and moistures the skin)"
+msgstr "zvláčňující kůži"
+
 #: models.py:333
+msgid "febrifuge (reduces fevers)"
+msgstr "protihorečnatý"
+
+#: models.py:334
+msgid "rubefacient (produces inflammation and redness of the skin)"
+msgstr "rubefacientní (dráždí pokožku a zvyšuje její teplotu)"
+
+#: models.py:335
+msgid "vulnerary (promotes the healing of wounds)"
+msgstr "hojivý (hojí a zaceluje rány)"
+
+#: models.py:339
+msgid "anaesthetic (numbs the feeling in the body)"
+msgstr "anestetický (znecitlivující)"
+
+#: models.py:340
+msgid "analgesic (relieves pain)"
+msgstr "analgetický (zmírňuje bolest)"
+
+#: models.py:341
+msgid "antispasmodic (relaxes muscular spasms and cramps)"
+msgstr "antispasmodický (předchází a zmírňuje křeče)"
+
+#: models.py:342
+msgid "astringent (produces contraction in living tissue)"
+msgstr "svíravý (stahuje tkáně)"
+
+#: models.py:343
+msgid "nervine (stimulates and calms the nerves)"
+msgstr "uklidňující (působí příznivě na nervy)"
+
+#: models.py:344
+msgid "aromatherapeutic"
+msgstr "aromaterapeutický"
+
+#: models.py:345
+msgid "hallucinogenic"
+msgstr "halucinogenní"
+
+#: models.py:346
+msgid "hypnotic (induces sleep)"
+msgstr "hypnotický (uspává)"
+
+#: models.py:347
+msgid "refrigerant (cools the body)"
+msgstr "osvěžující (zahání žízeň a snižuje teplotu)"
+
+#: models.py:348
+msgid "sedative (reduces nervousness and irritation)"
+msgstr "sedativní (zklidňuje nervový systém)"
+
+#: models.py:349
+msgid "stimulant (excites or quickens activity of the physiological processes)"
+msgstr "stimulující (zvyšuje a zrychluje tělesnou aktivitu)"
+
+#: models.py:350
+msgid "tonic (improves general health)"
+msgstr "tonizující (posiluje tělo)"
+
+#: models.py:354
+msgid "antitussive (relieves coughing)"
+msgstr "antitusický (proti kašli)"
+
+#: models.py:355
+msgid "balsamic (soothing agent)"
+msgstr "balzamický (zklidňuje sliznice)"
+
+#: models.py:356
+msgid "decongestant (removes phlegm and mucous)"
+msgstr "odhleňující"
+
+#: models.py:357
+msgid "expectorant (clears phlegm from the chest by inducing coughing)"
+msgstr "expektorantní (pomáhá vylučování hlenu)"
+
+#: models.py:358
+msgid "pectoral (relieves respiratory diseases)"
+msgstr "pektorální (pomáhá dýchání)"
+
+#: models.py:362
+msgid "antianaemic (blood tonic)"
+msgstr "antianemický (léčí chudokrevnost)"
+
+#: models.py:363
+msgid "anticholesterolemic (prevents the build up of cholesterol)"
+msgstr "anticholesterolemický (snižuje hladinu cholesterolu)"
+
+#: models.py:364
+msgid "blood purifier"
+msgstr "čistící krev"
+
+#: models.py:365
+msgid "cardiac (used in the treatment of heart problems)"
+msgstr "reguluje srdeční činnost"
+
+#: models.py:366
+msgid "cardiotonic (stimulates blood circulation)"
+msgstr "posiluje krevní oběh"
+
+#: models.py:367
+msgid "haemostatic (controls internal bleeding)"
+msgstr "hemostatický (zastavuje krvácení)"
+
+#: models.py:368
+msgid "hypertensive (increases blood pressure)"
+msgstr "hypertenzní (zvyšuje krevní tlak)"
+
+#: models.py:369
+msgid "hypoglycaemic (reduces the levels of sugar in the blood)"
+msgstr "hypoglykemický (snižuje hladinu cukru v krvi)"
+
+#: models.py:370
+msgid "hypotensive (reduces blood pressure)"
+msgstr "hypotenzní (snižuje krevní tlak)"
+
+#: models.py:371
+msgid "vasoconstrictor (narrows the blood vessels)"
+msgstr "vazokonstrukční (stahuje drobné cévky)"
+
+#: models.py:372
+msgid "vasodilator (widens the blood vessels)"
+msgstr "vazodilatační (roztahuje drobné cévky)"
+
+#: models.py:376
+msgid "antidiarrhoeal"
+msgstr "protiprůjmový"
+
+#: models.py:377
+msgid "antiemetic (prevents vomiting)"
+msgstr "antiemetický (zabraňuje nevolnosti a zvracení)"
+
+#: models.py:378
+msgid "appetizer (improves the appetite)"
+msgstr "zvyšující chuť k jídlu"
+
+#: models.py:379
+msgid "bitter (increases the appetite and stimulates digestion)"
+msgstr "hořký (zvyšuje chuť k jídlu a podporuje trávení)"
+
+#: models.py:380
+msgid "carminative (reduces flatulence and expels gas from the intestines)"
+msgstr "karminativní (potlačuje plynatost)"
+
+#: models.py:381
+msgid "cholagogue (increases the flow of bile)"
+msgstr "cholagogický (stimuluje produkci žluče)"
+
+#: models.py:382
+msgid "depurative (eliminates toxins and purifies the organism)"
+msgstr "detoxikační (čistí organismus)"
+
+#: models.py:383
+msgid "diuretic (promotes the flow of urine)"
+msgstr "diuretický (močopudný)"
+
+#: models.py:384
+msgid "hepatic (acts on the liver)"
+msgstr "hepatický (působí na játra)"
+
+#: models.py:385
+msgid "laxative (stimulates bowel movements)"
+msgstr "projímavý (podporuje činnost střev)"
+
+#: models.py:386
+msgid "lithontripic (removes stones from kidney or bladder)"
+msgstr "rozpouštějící žlučové kameny"
+
+#: models.py:387
+msgid "stomachic (improves the action of the stomach)"
+msgstr "stomachický (podporuje trávení)"
+
+#: models.py:391
+msgid "abortifacient (causes an abortion)"
+msgstr "abortivní (způsobuje potrat)"
+
+#: models.py:392
+msgid "anaphrodisiac (reduces sexual desire)"
+msgstr "anafrodiziakální (tlumí sexuální potřeby)"
+
+#: models.py:393
+msgid "aphrodisiac (increases the sexual appetite)"
+msgstr "afrodiziakální (zvyšuje sexuální potřeby)"
+
+#: models.py:394
+msgid "contraceptive (prevents fertilization)"
+msgstr "kontraceptivní (zabraňuje otěhotnění)"
+
+#: models.py:395
+msgid "emmenagogue (promotes or increases the menstrual flow)"
+msgstr "emenagogický (povzbuzuje menstruační krvácení)"
+
+#: models.py:396
+msgid "galactofuge (reduces the flow of milk in a nursing mother)"
+msgstr "antilaktační (zastavuje tvorbu mateřského mléka)"
+
+#: models.py:397
+msgid "galactogogue (promotes the flow of milk in a nursing mother)"
+msgstr "laktační (podporuje tvorbu mateřského mléka)"
+
+#: models.py:398
+msgid "uterine tonic (stimulates uterine contractions during the birth)"
+msgstr "děložní (tonizující dělohu při porodu)"
+
+#: models.py:402
+msgid "antibacterial"
+msgstr "antibakteriální"
+
+#: models.py:403
+msgid "antibiotic (inhibits infections)"
+msgstr "antibiotický (potlačuje infekci v těle)"
+
+#: models.py:404
+msgid "antiinflammatory"
+msgstr "protizánětlivý"
+
+#: models.py:405
+msgid "antiviral"
+msgstr "antivirální"
+
+#: models.py:406
+msgid "parasiticide (kills internal parasites)"
+msgstr "antiparazitický"
+
+#: models.py:414
+msgid "Draft"
+msgstr "Draft"
+
+#: models.py:417
 msgid "Latin name"
 msgstr "Latinský název"
 
-#: models.py:335
+#: models.py:419
 msgid "Common name (EN)"
 msgstr "Obecný název (EN)"
 
-#: models.py:336
+#: models.py:420
 msgid "Folk names (EN)"
 msgstr "Lidové názvy (EN)"
 
-#: models.py:337
+#: models.py:421
 msgid "Family (EN)"
 msgstr "Čeleď (EN)"
 
-#: models.py:338
+#: models.py:422
 msgid "Description (EN)"
 msgstr "Popis (EN)"
 
-#: models.py:339
+#: models.py:423
 msgid "Common name (DE)"
 msgstr "Obecný název (DE)"
 
-#: models.py:340
+#: models.py:424
 msgid "Folk names (DE)"
 msgstr "Lidové názvy (DE)"
 
-#: models.py:341
+#: models.py:425
 msgid "Family (DE)"
 msgstr "Čeleď (DE)"
 
-#: models.py:342
+#: models.py:426
 msgid "Description (DE)"
 msgstr "Popis (DE)"
 
-#: models.py:343
+#: models.py:427
 msgid "Common name (CS)"
 msgstr "Obecný název (CZ)"
 
-#: models.py:344
+#: models.py:428
 msgid "Folk names (CS)"
 msgstr "Lidové názvy (CZ)"
 
-#: models.py:345
+#: models.py:429
 msgid "Family (CS)"
 msgstr "Čeleď (CZ)"
 
-#: models.py:346
+#: models.py:430
 msgid "Description (CS)"
 msgstr "Popis (CZ)"
 
-#: models.py:353
+#: models.py:437
 msgid "Is healing"
 msgstr "Léčivá"
 
-#: models.py:354
+#: models.py:438
 msgid "Is toxic"
 msgstr "Jedovatá"
 
-#: models.py:355
+#: models.py:439
 msgid "Plant type"
 msgstr "Typ rostliny"
 
-#: models.py:356
+#: models.py:440
 msgid "Min.height (cm)"
 msgstr "Min.výška (cm)"
 
-#: models.py:357
+#: models.py:441
 msgid "Max.height (cm)"
 msgstr "Max.výška (cm)"
 
-#: models.py:359
+#: models.py:443
 msgid "Predominant flower color"
 msgstr "Převládající barva květu"
 
-#: models.py:360
+#: models.py:444
 msgid "Flower type"
 msgstr "Typ květu"
 
-#: models.py:361
+#: models.py:445
 msgid "Blooming from"
 msgstr "Kvete od"
 
-#: models.py:362
+#: models.py:446
 msgid "Blooming to"
 msgstr "Kvete do"
 
-#: models.py:363
+#: models.py:447
 msgid "Min.petal count"
 msgstr "Min.počet okvětních lístků"
 
-#: models.py:364
+#: models.py:448
 msgid "Max.petal count"
 msgstr "Max.počet okvětních lístků"
 
-#: models.py:366
+#: models.py:450
 msgid "Leaf type"
 msgstr "Typ listu"
 
-#: models.py:367
+#: models.py:451
 msgid "Leaf shape"
 msgstr "Tvar listu"
 
-#: models.py:368
+#: models.py:452
 msgid "Leaf shape (alt.)"
 msgstr "Tvar listu (alt.)"
 
-#: models.py:369
+#: models.py:453
 msgid "Leaf edge"
 msgstr "Okraj listu"
 
-#: models.py:370
+#: models.py:454
 msgid "Leaf edge (alt.)"
 msgstr "Okraj listu (alt.)"
 
-#: models.py:371
+#: models.py:455
 msgid "Leaf arrangement"
 msgstr "Umístění na stonku"
 
-#: models.py:372
+#: models.py:456
 msgid "Leaf arrangement (alt.)"
 msgstr "Umístění na stonku (alt.)"
 
-#: models.py:374
+#: models.py:458
 msgid "Needle type"
 msgstr "Typ jehlic"
 
-#: models.py:375
+#: models.py:459
 msgid "Ast branching"
 msgstr "Větvení"
 
-#: models.py:376
+#: models.py:460
 msgid "Bark type"
 msgstr "Typ borky"
 
-#: models.py:377
+#: models.py:461
 msgid "Bark type (alt.)"
 msgstr "Typ borky (alt.)"
 
-#: models.py:379
+#: models.py:463
 msgid "Fruit type"
 msgstr "Typ plodu"
 
-#: models.py:380
+#: models.py:464
 msgid "Fruit from"
 msgstr "Plody od"
 
-#: models.py:381
+#: models.py:465
 msgid "Fruit to"
 msgstr "Plody do"
 
-#: models.py:386 models.py:454 models.py:595 models.py:631
+#: models.py:478 models.py:555 models.py:696 models.py:732
 msgid "Herb"
 msgstr "Bylinka"
 
-#: models.py:387
+#: models.py:479
 msgid "Herbs"
 msgstr "Bylinky"
 
-#: models.py:404
+#: models.py:496
 msgid "Pictures"
 msgstr "Obrázky"
 
-#: models.py:455
+#: models.py:556
 msgid "Filename"
 msgstr "Soubor"
 
-#: models.py:460
+#: models.py:561
 msgid "Herb picture"
 msgstr "Obrázek bylinky"
 
-#: models.py:461
+#: models.py:562
 msgid "Herb pictures"
 msgstr "Obrázky bylinek"
 
-#: models.py:481
+#: models.py:582
 msgid "Thumbnail"
 msgstr "Náhled"
 
-#: models.py:575
+#: models.py:676
 msgid "tea"
 msgstr "čaj"
 
-#: models.py:576
+#: models.py:677
 msgid "inhalation"
 msgstr "inhalace"
 
-#: models.py:577
+#: models.py:678
 msgid "gargle"
 msgstr "kloktání"
 
-#: models.py:578
+#: models.py:679
 msgid "bath"
 msgstr "koupel"
 
-#: models.py:579
+#: models.py:680
 msgid "ointment"
 msgstr "mast"
 
-#: models.py:580
+#: models.py:681
 msgid "honey"
 msgstr "med"
 
-#: models.py:581
+#: models.py:682
 msgid "poultice"
 msgstr "obklad"
 
-#: models.py:582
+#: models.py:683
 msgid "oil"
 msgstr "olej"
 
-#: models.py:583
+#: models.py:684
 msgid "powder"
 msgstr "prášek"
 
-#: models.py:584
+#: models.py:685
 msgid "syrup"
 msgstr "sirup"
 
-#: models.py:585
+#: models.py:686
 msgid "liquere"
 msgstr "likér"
 
-#: models.py:586
+#: models.py:687
 msgid "juice"
 msgstr "šťáva"
 
-#: models.py:587
+#: models.py:688
 msgid "tincture"
 msgstr "tinktura"
 
-#: models.py:588
+#: models.py:689
 msgid "jam"
 msgstr "zavařenina"
 
-#: models.py:589
+#: models.py:690
 msgid "chewing"
 msgstr "žvýkání"
 
-#: models.py:597
+#: models.py:698
 msgid "Usage"
 msgstr "Užití"
 
-#: models.py:599 models.py:636
+#: models.py:700 models.py:737
 msgid "Note (EN)"
 msgstr "Poznámka (EN)"
 
-#: models.py:600 models.py:637
+#: models.py:701 models.py:738
 msgid "Note (DE)"
 msgstr "Poznámka (DE)"
 
-#: models.py:601 models.py:638
+#: models.py:702 models.py:739
 msgid "Note (CS)"
 msgstr "Poznámka (CZ)"
 
-#: models.py:605
+#: models.py:706
 msgid "Herb usage"
 msgstr "Užití bylinky"
 
-#: models.py:606
+#: models.py:707
 msgid "Herb usages"
 msgstr "Užití bylinek"
 
-#: models.py:618
+#: models.py:719
 msgid "root"
 msgstr "kořen"
 
-#: models.py:619
+#: models.py:720
 msgid "bark"
 msgstr "kůra"
 
-#: models.py:620
+#: models.py:721
 msgid "flower"
 msgstr "květ"
 
-#: models.py:621
+#: models.py:722
 msgid "leaf"
 msgstr "list"
 
-#: models.py:622
+#: models.py:723
 msgid "needle"
 msgstr "jehlice"
 
-#: models.py:624
+#: models.py:725
 msgid "fruit"
 msgstr "plod"
 
-#: models.py:625
+#: models.py:726
 msgid "resin"
 msgstr "pryskyřice"
 
-#: models.py:632
+#: models.py:733
 msgid "Part"
 msgstr "Část"
 
-#: models.py:633
+#: models.py:734
 msgid "Pick from"
 msgstr "Sběr od"
 
-#: models.py:634
+#: models.py:735
 msgid "Pick to"
 msgstr "Sběr od"
 
-#: models.py:642
+#: models.py:743
 msgid "Herb pick"
 msgstr "Sběr bylinky"
 
-#: models.py:643
+#: models.py:744
 msgid "Herb picks"
 msgstr "Sběr bylinek"
 
