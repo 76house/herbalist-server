@@ -252,6 +252,7 @@ LEAF_CHOICES = (
     (4, _('compound hand-shaped')),
     (5, _('compound imparipinnate')),
     (6, _('compound paripinnate')),
+    (7, _('scaly (equisetaceae)')),
 )
 
 LEAF_SHAPE_CHOICES = (
@@ -312,6 +313,9 @@ FRUIT_CHOICES = (
     (10, _('drupe')),
     (11, _('pome')),
     (12, _('cone')),
+    (13, _('caryopsis')),
+    (14, _('spore')),
+    (15, _('no fruit')),
 )
 
 ENVIRONMENT_CHOICES = (

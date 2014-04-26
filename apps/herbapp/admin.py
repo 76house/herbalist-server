@@ -12,24 +12,44 @@ from herbapp.models import Purchase, Author, Disease, Herb, HerbPicture, HerbUsa
     EFFECT_DIGESTIVE_CHOICES, EFFECT_REPRO_CHOICES, EFFECT_INFECTION_CHOICES
 
 
+# ------------------------------------------------------------------------------
+
+# Widget for multiple selection
+class CSICheckboxSelectMultiple(CheckboxSelectMultiple):
+    def value_from_datadict(self, data, files, name):
+        # Return a string of comma separated integers since the database, and
+        # field expect a string (not a list).
+        return ','.join(data.getlist(name))
+
+    def render(self, name, value, attrs=None, choices=()):
+        # Convert comma separated integer string to a list, since the checkbox
+        # rendering code expects a list (not a string)
+        if value:
+            value = value.split(',')
+        return super(CSICheckboxSelectMultiple, self).render(
+            name, value, attrs=attrs, choices=choices
+        )
+
 
 # ------------------------------------------------------------------------------
 
-class CsiModelForm(ModelForm):
+# Form field for multiple selection
+class CSIMultipleChoiceField(MultipleChoiceField):
+    widget = CSICheckboxSelectMultiple
 
-    # clean the string with a list result of multiple choice widget
-    def clean_csi(self, field): 
-        data = self.cleaned_data[field] 
-        data.sort() 
-        csi_list = [] 
-        first_element = True 
-        for element in data: 
-            if not first_element: 
-                csi_list.append(",") 
-            else: 
-                first_element = False 
-            csi_list.append(str(element)) 
-        return "".join(csi_list)
+    # Value is stored and retrieved as a string of comma separated
+    # integers. We don't want to do processing to convert the value to
+    # a list like the normal MultipleChoiceField does.
+    def to_python(self, value):
+        return value
+
+    def validate(self, value):
+        # If we have a value, then we know it is a string of comma separated
+        # integers. To use the MultipleChoiceField validator, we first have
+        # to convert the value to a list.
+        if value:
+            value = value.split(',')
+        super(CSIMultipleChoiceField, self).validate(value)
 
 
 # ------------------------------------------------------------------------------
@@ -50,27 +70,15 @@ class AuthorAdmin(admin.ModelAdmin):
 
 # ------------------------------------------------------------------------------
 
-class DiseaseForm(CsiModelForm):
-    age_group = MultipleChoiceField(choices=AGE_CHOICES, widget=CheckboxSelectMultiple(), required=True, label=_('Age group'))
-    disease_type = MultipleChoiceField(choices=DISEASE_TYPE_CHOICES, widget=CheckboxSelectMultiple(), required=True, label=_('Type'))
+class DiseaseForm(ModelForm):
+    age_group = CSIMultipleChoiceField(choices=AGE_CHOICES, widget=CSICheckboxSelectMultiple(), required=True, label=_('Age group'))
+    disease_type = CSIMultipleChoiceField(choices=DISEASE_TYPE_CHOICES, widget=CSICheckboxSelectMultiple(), required=True, label=_('Type'))
 
-    body_parts = MultipleChoiceField(choices=BODY_PART_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Body parts'))
-    head_parts = MultipleChoiceField(choices=HEAD_PART_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Head parts'))
+    body_parts = CSIMultipleChoiceField(choices=BODY_PART_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Body parts'))
+    head_parts = CSIMultipleChoiceField(choices=HEAD_PART_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Head parts'))
 
     class Meta:
         model = Disease
-
-    def clean_age_group(self): 
-        return self.clean_csi('age_group')
-
-    def clean_disease_type(self): 
-        return self.clean_csi('disease_type')
-
-    def clean_body_parts(self): 
-        return self.clean_csi('body_parts')
-
-    def clean_head_parts(self): 
-        return self.clean_csi('head_parts')
 
 
 # ------------------------------------------------------------------------------
@@ -102,42 +110,24 @@ class HerbUsageInline(admin.TabularInline):
 
 # ------------------------------------------------------------------------------
 
-class HerbForm(CsiModelForm):
-    environment = MultipleChoiceField(choices=ENVIRONMENT_CHOICES, widget=CheckboxSelectMultiple(), required=True, label=_('Environment'))
-    effect_skin        = MultipleChoiceField(choices=EFFECT_SKIN_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Skin'))
-    effect_muscular    = MultipleChoiceField(choices=EFFECT_MUSCULAR_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Muscular and nervous system'))
-    effect_respiratory = MultipleChoiceField(choices=EFFECT_RESPIRATORY_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Respiratory system'))
-    effect_cardio      = MultipleChoiceField(choices=EFFECT_CARDIO_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Cardiovascular system'))
-    effect_digestive   = MultipleChoiceField(choices=EFFECT_DIGESTIVE_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Digestive and excretory system'))
-    effect_repro       = MultipleChoiceField(choices=EFFECT_REPRO_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Reproductive system'))
-    effect_infection   = MultipleChoiceField(choices=EFFECT_INFECTION_CHOICES, widget=CheckboxSelectMultiple(), required=False, label=_('Infections'))
-
+class HerbForm(ModelForm):
+    environment = CSIMultipleChoiceField(choices=ENVIRONMENT_CHOICES, widget=CSICheckboxSelectMultiple(), required=True, label=_('Environment'))
+    effect_skin        = CSIMultipleChoiceField(choices=EFFECT_SKIN_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Skin'))
+    effect_muscular    = CSIMultipleChoiceField(choices=EFFECT_MUSCULAR_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Muscular and nervous system'))
+    effect_respiratory = CSIMultipleChoiceField(choices=EFFECT_RESPIRATORY_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Respiratory system'))
+    effect_cardio      = CSIMultipleChoiceField(choices=EFFECT_CARDIO_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Cardiovascular system'))
+    effect_digestive   = CSIMultipleChoiceField(choices=EFFECT_DIGESTIVE_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Digestive and excretory system'))
+    effect_repro       = CSIMultipleChoiceField(choices=EFFECT_REPRO_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Reproductive system'))
+    effect_infection   = CSIMultipleChoiceField(choices=EFFECT_INFECTION_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Infections'))
+        
     class Meta:
         model = Herb
 
-    def clean_environment(self): 
-        return self.clean_csi('environment')
-
-    def clean_effect_skin(self): 
-        return self.clean_csi('effect_skin')
-
-    def clean_effect_muscular(self): 
-        return self.clean_csi('effect_muscular')
-
-    def clean_effect_respiratory(self): 
-        return self.clean_csi('effect_respiratory')
-
-    def clean_effect_cardio(self): 
-        return self.clean_csi('effect_cardio')
-
-    def clean_effect_digestive(self): 
-        return self.clean_csi('effect_digestive')
-
-    def clean_effect_repro(self): 
-        return self.clean_csi('effect_repro')
-
-    def clean_effect_infection(self): 
-        return self.clean_csi('effect_infection')
+    def __init__(self, *args, **kwargs):
+        super(HerbForm, self).__init__(*args, **kwargs)
+        self.fields['alias_en'].widget.attrs.update({'class' : 'vLargeTextField'})
+        self.fields['alias_de'].widget.attrs.update({'class' : 'vLargeTextField'})
+        self.fields['alias_cs'].widget.attrs.update({'class' : 'vLargeTextField'})
 
 
 # ------------------------------------------------------------------------------
