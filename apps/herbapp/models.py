@@ -11,6 +11,9 @@ from django.conf import settings
 from django.db import models
 from django.db.models.base import ModelBase
 from django.utils.translation import get_language, ugettext_lazy as _
+from utils import *
+
+SUPPORTED_LANGUAGES = ['en', 'de', 'es', 'fr', 'it', 'ru', 'cs', 'sk', 'pl', 'tr', 'ar', 'zh']
 
 
 # ------------------------------------------------------------------------------
@@ -410,6 +413,58 @@ EFFECT_INFECTION_CHOICES = (
     (5, _('parasiticide (kills internal parasites)')),
 )
 
+REGION_HOLARCTIC_CHOICES = (
+    (1, _('Circumboreal')),
+    (2, _('Eastern Asiatic')),
+    (3, _('North American Atlantic')),
+    (4, _('Rocky Mountain')),
+    (5, _('Macaronesian')),
+    (6, _('Mediterranean')),
+    (7, _('Saharo-Arabian')),
+    (8, _('Irano-Turanian')),
+    (9, _('Madrean')),
+)
+
+REGION_PALEOTROPICAL_CHOICES = (
+    (1, _('Guineo-Congolian')),
+    (2, _('Eastern African Coast')),
+    (3, _('Sudano-Zambezian')),
+    (4, _('Karoo-Namib')),
+    (5, _('Madagascan')),
+    (6, _('Indian')),
+    (7, _('Indochinese')),
+    (8, _('Malesian')),
+    (9, _('Fijian')),
+    (10, _('Polynesian')),
+    (11, _('Hawaiian')),
+    (12, _('Neocaledonian')),
+)
+
+REGION_NEOTROPICAL_CHOICES = (
+    (1, _('Caribbean')),
+    (2, _('Guayana Highlands')),
+    (3, _('Amazonian')),
+    (4, _('Brazilian')),
+    (5, _('Andean')),
+)
+ 
+REGION_SOUTHAFRICAN_CHOICES = (
+    (1, _('Cape')),
+)
+
+REGION_AUSTRALIAN_CHOICES = (
+    (1, _('Northeast Australian')),
+    (2, _('Southwest Australian ')),
+    (3, _('Central Australian')),
+)
+
+REGION_ANTARCTIC_CHOICES = (
+    (1, _('Fernandezian')),
+    (2, _('Chile-Patagonian')),
+    (3, _('South Subantarctic Islands')),
+    (4, _('Neozeylandic')),
+)
+
 
 class Herb(models.Model):
     __metaclass__   = LocalizeModelBase
@@ -419,23 +474,31 @@ class Herb(models.Model):
     author_id       = models.ForeignKey('herbapp.Author', default=1, verbose_name=_('Author'))
     timestamp       = models.DateTimeField(default=datetime.now, editable=False) # last change
     botanical_name  = models.CharField(max_length=40, unique=True, verbose_name=_('Latin name'))
+    synonyms        = models.CharField(max_length=100, blank=True, verbose_name=_('Latin synonymes'))
+    family          = models.CharField(max_length=40, blank=True, verbose_name=_('Family'))
 
     name_en         = models.CharField(max_length=40, verbose_name=_('Common name (EN)'))
     alias_en        = models.CharField(max_length=100, blank=True, verbose_name=_('Folk names (EN)'))
-    family_en       = models.CharField(max_length=40, blank=True, verbose_name=_('Family (EN)'))
     description_en  = models.TextField(blank=True, verbose_name=_('Description (EN)'))
     name_de         = models.CharField(max_length=40, verbose_name=_('Common name (DE)'))
     alias_de        = models.CharField(max_length=100, blank=True, verbose_name=_('Folk names (DE)'))
-    family_de       = models.CharField(max_length=40, blank=True, verbose_name=_('Family (DE)'))
     description_de  = models.TextField(blank=True, verbose_name=_('Description (DE)'))
     name_cs         = models.CharField(max_length=40, verbose_name=_('Common name (CS)'))
     alias_cs        = models.CharField(max_length=100, blank=True, verbose_name=_('Folk names (CS)'))
-    family_cs       = models.CharField(max_length=40, blank=True, verbose_name=_('Family (CS)'))
     description_cs  = models.TextField(blank=True, verbose_name=_('Description (CS)'))
+
+    name_fr         = models.CharField(max_length=40, blank=True, verbose_name=_('Common name (FR)'))
+    name_it         = models.CharField(max_length=40, blank=True, verbose_name=_('Common name (IT)'))
+    name_es         = models.CharField(max_length=40, blank=True, verbose_name=_('Common name (ES)'))
+    name_ru         = models.CharField(max_length=40, blank=True, verbose_name=_('Common name (RU)'))
+    name_sk         = models.CharField(max_length=40, blank=True, verbose_name=_('Common name (SK)'))
+    name_pl         = models.CharField(max_length=40, blank=True, verbose_name=_('Common name (PL)'))
+    name_tr         = models.CharField(max_length=40, blank=True, verbose_name=_('Common name (TR)'))
+    name_ar         = models.CharField(max_length=40, blank=True, verbose_name=_('Common name (AR)'))
+    name_zh         = models.CharField(max_length=40, blank=True, verbose_name=_('Common name (ZH)'))
 
     name            = Translate
     alias           = Translate
-    family          = Translate
     description     = Translate
 
     is_healing      = models.BooleanField(default=True, verbose_name=_('Is healing'))
@@ -478,6 +541,14 @@ class Herb(models.Model):
     effect_repro       = models.CommaSeparatedIntegerField(max_length=30, default='', verbose_name=_('Reproductive system'))            # list of EFFECT_REPRO_CHOICES
     effect_infection   = models.CommaSeparatedIntegerField(max_length=30, default='', verbose_name=_('Infections'))                     # list of EFFECT_INFECTION_CHOICES
 
+    region_holarctic       = models.CommaSeparatedIntegerField(max_length=20, default='', verbose_name=_('Holarctic'))                  # list of REGION_HOLARCTIC_CHOICES
+    region_paleotropical   = models.CommaSeparatedIntegerField(max_length=28, default='', verbose_name=_('Paleotropical'))              # list of REGION_PALEOTROPICAL_CHOICES
+    region_neotropical     = models.CommaSeparatedIntegerField(max_length=12, default='', verbose_name=_('Neotropical'))                # list of REGION_NEOTROPICAL_CHOICES
+    region_southafrican    = models.CommaSeparatedIntegerField(max_length=4, default='', verbose_name=_('South African'))               # list of REGION_SOUTHAFRICAN_CHOICES
+    region_australian      = models.CommaSeparatedIntegerField(max_length=8, default='', verbose_name=_('Australian'))                  # list of REGION_AUSTRALIAN_CHOICES
+    region_antarctic       = models.CommaSeparatedIntegerField(max_length=10, default='', verbose_name=_('Antarctic'))                  # list of REGION_ANTARCTIC_CHOICES
+
+
     class Meta:
         verbose_name = _('Herb')
         verbose_name_plural = _('Herbs')
@@ -502,10 +573,13 @@ class Herb(models.Model):
 
     # displays localized herb name and status (draft / published)
     def name_status(self):
+        name = self.name.strip()
+        if len(name) == 0:
+          name = "???"
         if (self.is_draft):
-            return self.name + ' <span style="padding: 0.1em 0.3em; background: #5c9425; color: #fff; font-size: 0.9em; border-radius: 3px;">DRAFT</span>'
+            return name + ' <span style="padding: 0.1em 0.3em; background: #5c9425; color: #fff; font-size: 0.9em; border-radius: 3px;">DRAFT</span>'
         else:
-            return self.name
+            return name
 
     # displays a bullet if English texts are complete
     def has_language_en(self):
@@ -536,6 +610,97 @@ class Herb(models.Model):
     has_language_en.allow_tags = True
     has_language_de.allow_tags = True
     has_language_cs.allow_tags = True
+
+
+    def save(self):
+
+        if not self._id:
+            return
+
+        # botanical name already inserted and the fanily not yet?
+        if self.botanical_name != "" and self.family == "":
+            # enrich the record with additional data (family, translated names, distribution)
+            self.enrich_with_distribution()
+            self.enrich_with_names()
+
+        super(Herb, self).save()
+
+
+    def get_botanical_names(self):
+        botanical_names = [ self.botanical_name ]
+        if self.synonyms:
+            botanical_names.extend( self.synonyms.split(",") )
+        return botanical_names
+
+
+    def enrich_with_names(self):
+        # enrich the object with botanical family and translated names from wikipedia
+        try:
+            names = {}
+            names['family'] = self.family
+            names['en'] = self.name_en
+            names['de'] = self.name_de
+            names['cs'] = self.name_cs
+            names['fr'] = self.name_fr
+            names['it'] = self.name_it
+            names['es'] = self.name_es
+            names['ru'] = self.name_ru
+            names['sk'] = self.name_sk
+            names['pl'] = self.name_pl
+            names['tr'] = self.name_tr
+            names['ar'] = self.name_ar
+            names['zh'] = self.name_zh
+
+
+            # fetch data from wikipedia
+            for bn in self.get_botanical_names():
+                herbname = bn.replace(" ", "_")
+                url = "http://commons.wikimedia.org/wiki/Special:Export/" + herbname
+                fetch_from_wikipedia(url, names, SUPPORTED_LANGUAGES)
+                url = "http://species.wikimedia.org/wiki/Special:Export/" + herbname
+                fetch_from_wikipedia(url, names, SUPPORTED_LANGUAGES)
+
+            self.family = names['family']
+            self.name_en = names['en']
+            self.name_de = names['de']
+            self.name_cs = names['cs']
+            self.name_fr = names['fr']
+            self.name_it = names['it']
+            self.name_es = names['es']
+            self.name_ru = names['ru']
+            self.name_sk = names['sk']
+            self.name_pl = names['pl']
+            self.name_tr = names['tr']
+            self.name_ar = names['ar']
+            self.name_zh = names['zh']
+            print "Object enriched with additional info from wikipedia"
+        except:
+            print "Error: failed to fetch additional info from wikipedia"
+
+
+    def enrich_with_distribution(self):
+        # enrich the object with geographical distribution, as found in region data
+        try:
+            region_data = {}
+            region_data['holarctic'] = []
+            region_data['paleotropical'] = []
+            region_data['neotropical'] = []
+            region_data['southafrican'] = []
+            region_data['australian'] = []
+            region_data['antarctic'] = []
+
+            fetch_from_region_data(self.get_botanical_names(), region_data)
+
+            self.region_holarctic = ','.join(region_data['holarctic'])
+            self.region_paleotropical = ','.join(region_data['paleotropical'])
+            self.region_neotropical = ','.join(region_data['neotropical'])
+            self.region_southafrican = ','.join(region_data['southafrican'])
+            self.region_australian = ','.join(region_data['australian'])
+            self.region_antarctic = ','.join(region_data['antarctic'])
+            #print "HOLARCTIC", self.region_holarctic
+            print "Object enriched with additional info from region data"
+        except:
+            print "Error: failed to fetch additional info from region data"
 
 
 # ------------------------------------------------------------------------------
@@ -692,6 +857,7 @@ USAGE_CHOICES = (
     (13, _('tincture')),
     (14, _('jam')),
     (15, _('chewing')),
+    (16, _('meal')),
 )
 
 class HerbUsage(models.Model):

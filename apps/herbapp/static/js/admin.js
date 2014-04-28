@@ -11,9 +11,9 @@
                 case "1":
                 {
                     // plant
-                    $("#fieldset-5").show(); // flower
-                    $("#fieldset-6").show(); // leaf
-                    $("#fieldset-7").hide(); // shrub/tree
+                    $("#fieldset-6").show(); // flower
+                    $("#fieldset-7").show(); // leaf
+                    $("#fieldset-8").hide(); // shrub/tree
                     $(".field-leaf_arrangement").show();
                     $(".field-leaf_arrangement_alt").show();
                 } break;
@@ -21,9 +21,9 @@
                 case "2":
                 {
                     // leaf shrub
-                    $("#fieldset-5").show(); // flower
-                    $("#fieldset-6").show(); // leaf
-                    $("#fieldset-7").show(); // shrub/tree
+                    $("#fieldset-6").show(); // flower
+                    $("#fieldset-7").show(); // leaf
+                    $("#fieldset-8").show(); // shrub/tree
                     $(".field-leaf_arrangement").hide();
                     $(".field-leaf_arrangement_alt").hide();
                     $(".field-needle_type").hide();
@@ -35,9 +35,9 @@
                 case "3":
                 {
                     // needle shrub
-                    $("#fieldset-5").hide(); // flower
-                    $("#fieldset-6").hide(); // leaf
-                    $("#fieldset-7").show(); // shrub/tree
+                    $("#fieldset-6").hide(); // flower
+                    $("#fieldset-7").hide(); // leaf
+                    $("#fieldset-8").show(); // shrub/tree
                     $(".field-leaf_arrangement").hide();
                     $(".field-leaf_arrangement_alt").hide();
                     $(".field-needle_type").show();
@@ -49,9 +49,9 @@
                 case "4":
                 {
                     // leaf tree
-                    $("#fieldset-5").show(); // flower
-                    $("#fieldset-6").show(); // leaf
-                    $("#fieldset-7").show(); // shrub/tree
+                    $("#fieldset-6").show(); // flower
+                    $("#fieldset-7").show(); // leaf
+                    $("#fieldset-8").show(); // shrub/tree
                     $(".field-leaf_arrangement").hide();
                     $(".field-leaf_arrangement_alt").hide();
                     $(".field-needle_type").hide();
@@ -63,9 +63,9 @@
                 case "5":
                 {
                     // needle tree
-                    $("#fieldset-5").hide(); // flower
-                    $("#fieldset-6").hide(); // leaf
-                    $("#fieldset-7").show(); // shrub/tree
+                    $("#fieldset-6").hide(); // flower
+                    $("#fieldset-7").hide(); // leaf
+                    $("#fieldset-8").show(); // shrub/tree
                     $(".field-leaf_arrangement").hide();
                     $(".field-leaf_arrangement_alt").hide();
                     $(".field-needle_type").show();

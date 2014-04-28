@@ -9,7 +9,9 @@ from django.utils.translation import get_language, ugettext as _
 from herbapp.models import Purchase, Author, Disease, Herb, HerbPicture, HerbUsage, HerbPick, \
     ENVIRONMENT_CHOICES, AGE_CHOICES, DISEASE_TYPE_CHOICES, BODY_PART_CHOICES, HEAD_PART_CHOICES, \
     EFFECT_SKIN_CHOICES, EFFECT_MUSCULAR_CHOICES, EFFECT_RESPIRATORY_CHOICES, EFFECT_CARDIO_CHOICES, \
-    EFFECT_DIGESTIVE_CHOICES, EFFECT_REPRO_CHOICES, EFFECT_INFECTION_CHOICES
+    EFFECT_DIGESTIVE_CHOICES, EFFECT_REPRO_CHOICES, EFFECT_INFECTION_CHOICES, \
+    REGION_HOLARCTIC_CHOICES, REGION_PALEOTROPICAL_CHOICES, REGION_NEOTROPICAL_CHOICES, \
+    REGION_SOUTHAFRICAN_CHOICES, REGION_AUSTRALIAN_CHOICES, REGION_ANTARCTIC_CHOICES
 
 
 # ------------------------------------------------------------------------------
@@ -119,6 +121,13 @@ class HerbForm(ModelForm):
     effect_digestive   = CSIMultipleChoiceField(choices=EFFECT_DIGESTIVE_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Digestive and excretory system'))
     effect_repro       = CSIMultipleChoiceField(choices=EFFECT_REPRO_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Reproductive system'))
     effect_infection   = CSIMultipleChoiceField(choices=EFFECT_INFECTION_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Infections'))
+
+    region_holarctic       = CSIMultipleChoiceField(choices=REGION_HOLARCTIC_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Holarctic'))
+    region_paleotropical   = CSIMultipleChoiceField(choices=REGION_PALEOTROPICAL_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Paleotropical'))
+    region_neotropical     = CSIMultipleChoiceField(choices=REGION_NEOTROPICAL_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Neotropical'))
+    region_southafrican    = CSIMultipleChoiceField(choices=REGION_SOUTHAFRICAN_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('South African'))
+    region_australian      = CSIMultipleChoiceField(choices=REGION_AUSTRALIAN_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Australian'))
+    region_antarctic       = CSIMultipleChoiceField(choices=REGION_ANTARCTIC_CHOICES, widget=CSICheckboxSelectMultiple(), required=False, label=_('Antarctic'))
         
     class Meta:
         model = Herb
@@ -143,7 +152,7 @@ class HerbAdmin(admin.ModelAdmin):
 
     fieldsets = (
         (None, {
-            'fields': ('is_draft', 'author_id', 'botanical_name', 'is_healing', 'is_toxic', 'plant_type', 'height_min', 'height_max', 'environment')
+            'fields': ('is_draft', 'author_id', 'botanical_name', 'synonyms', 'is_healing', 'is_toxic', 'plant_type', 'family', 'height_min', 'height_max', 'environment')
         }),
         (_('English'), {
             'classes': ('collapse','wide',),
@@ -157,6 +166,10 @@ class HerbAdmin(admin.ModelAdmin):
             'classes': ('collapse','wide',),
             'fields': ('name_cs', 'alias_cs', 'description_cs')
         }),
+        (_('Other languages'), {
+            'classes': ('collapse','wide',),
+            'fields': ('name_sk', 'name_es', 'name_fr', 'name_it', 'name_ru', 'name_pl', 'name_tr', 'name_ar', 'name_zh')
+        }),
         (_('Flower'), {
             'fields': ('flower_color', 'flower_type', 'blooming_from', 'blooming_to', 'petal_mincount', 'petal_maxcount')
         }),
@@ -168,6 +181,10 @@ class HerbAdmin(admin.ModelAdmin):
         }),
         (_('Fruit'), {
             'fields': ('fruit_type', 'fruit_from', 'fruit_to')
+        }),
+        (_('Distribution'), {
+            'classes': ('collapse',),
+            'fields': ('region_holarctic', 'region_paleotropical', 'region_neotropical', 'region_southafrican', 'region_australian', 'region_antarctic')
         }),
         (_('Effects'), {
             'classes': ('collapse',),

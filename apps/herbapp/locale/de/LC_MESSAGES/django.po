@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Herbalist\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-04-26 23:31+0200\n"
-"PO-Revision-Date: 2014-04-26 23:33+0100\n"
+"POT-Creation-Date: 2014-04-28 18:25+0200\n"
+"PO-Revision-Date: 2014-04-28 18:26+0100\n"
 "Last-Translator: Martin Marek <76house@centrum.cz>\n"
 "Language-Team: Herbalist team\n"
 "Language: de\n"
@@ -19,1214 +19,1424 @@ msgstr ""
 "X-Generator: Poedit 1.5.4\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 
-#: admin.py:74 models.py:151
+#: admin.py:76 models.py:154
 msgid "Age group"
 msgstr "Altergruppe"
 
-#: admin.py:75 models.py:152 models.py:172
+#: admin.py:77 models.py:155 models.py:175
 msgid "Type"
 msgstr "Typ"
 
-#: admin.py:77 models.py:153
+#: admin.py:79 models.py:156
 msgid "Body parts"
 msgstr "Körperteile"
 
-#: admin.py:78 models.py:154
+#: admin.py:80 models.py:157
 msgid "Head parts"
 msgstr "Kopfteile"
 
-#: admin.py:88 admin.py:89 admin.py:90 admin.py:139 admin.py:140 models.py:159
-#: models.py:484
+#: admin.py:90 admin.py:91 admin.py:92 admin.py:148 admin.py:149 models.py:162
+#: models.py:555
 msgid "name_en"
 msgstr "name_de"
 
-#: admin.py:114 models.py:471
+#: admin.py:116 models.py:534
 msgid "Environment"
 msgstr "Umgebung"
 
-#: admin.py:115 models.py:473
+#: admin.py:117 models.py:536
 msgid "Skin"
 msgstr "Haut"
 
-#: admin.py:116 models.py:474
+#: admin.py:118 models.py:537
 msgid "Muscular and nervous system"
 msgstr "Muskulatur und Nervensystem"
 
-#: admin.py:117 models.py:475
+#: admin.py:119 models.py:538
 msgid "Respiratory system"
 msgstr "Atemsystem"
 
-#: admin.py:118 models.py:476
+#: admin.py:120 models.py:539
 msgid "Cardiovascular system"
 msgstr "Kardiovaskuläres System"
 
-#: admin.py:119 models.py:477
+#: admin.py:121 models.py:540
 msgid "Digestive and excretory system"
 msgstr "Verdauungs- und Ausscheidungssystem"
 
-#: admin.py:120 models.py:478
+#: admin.py:122 models.py:541
 msgid "Reproductive system"
 msgstr "Reproduktionssystem"
 
-#: admin.py:121 models.py:479
+#: admin.py:123 models.py:542
 msgid "Infections"
 msgstr "Infektionen"
 
-#: admin.py:148
+#: admin.py:125 models.py:544
+msgid "Holarctic"
+msgstr "Holarctis"
+
+#: admin.py:126 models.py:545
+msgid "Paleotropical"
+msgstr "Paleotropis"
+
+#: admin.py:127 models.py:546
+msgid "Neotropical"
+msgstr "Neotropis"
+
+#: admin.py:128 models.py:547
+msgid "South African"
+msgstr "Capensis"
+
+#: admin.py:129 models.py:548
+msgid "Australian"
+msgstr "Australis"
+
+#: admin.py:130 models.py:549
+msgid "Antarctic"
+msgstr "Holantarctis"
+
+#: admin.py:157
 msgid "English"
 msgstr "Englisch"
 
-#: admin.py:152
+#: admin.py:161
 msgid "German"
 msgstr "Deutsch"
 
-#: admin.py:156
+#: admin.py:165
 msgid "Czech"
 msgstr "Tschechisch"
 
-#: admin.py:160
+#: admin.py:169
+msgid "Other languages"
+msgstr "Weitere Sprachen"
+
+#: admin.py:173
 msgid "Flower"
 msgstr "Blüte"
 
-#: admin.py:163
+#: admin.py:176
 msgid "Leaf"
 msgstr "Blatt"
 
-#: admin.py:166
+#: admin.py:179
 msgid "Shrub / tree"
 msgstr "Strauch / Baum"
 
-#: admin.py:169
+#: admin.py:182
 msgid "Fruit"
 msgstr "Frucht"
 
-#: admin.py:172
+#: admin.py:185
+msgid "Distribution"
+msgstr "Verteilung"
+
+#: admin.py:189
 msgid "Effects"
 msgstr "Wirkungen"
 
-#: models.py:62
+#: models.py:65
 msgid "Client ID"
 msgstr "Klient ID"
 
-#: models.py:63
+#: models.py:66
 msgid "Token"
 msgstr "Token"
 
-#: models.py:64
+#: models.py:67
 msgid "Last sync time"
 msgstr "Letzte Sync-Zeit"
 
-#: models.py:65
+#: models.py:68
 msgid "Client version"
 msgstr "Klientversion"
 
-#: models.py:66
+#: models.py:69
 msgid "Client platform"
 msgstr "Klientplatform"
 
-#: models.py:67
+#: models.py:70
 msgid "Language"
 msgstr "Sprache"
 
-#: models.py:68
+#: models.py:71
 msgid "Region"
 msgstr "Region"
 
-#: models.py:69
+#: models.py:72
 msgid "Screen width"
 msgstr "Bildschirmbreite"
 
-#: models.py:70
+#: models.py:73
 msgid "Screen height"
 msgstr "Bildschirmhöhe"
 
-#: models.py:71
+#: models.py:74
 msgid "Request count"
 msgstr "Requestanzahl"
 
-#: models.py:74
+#: models.py:77
 msgid "Purchase"
 msgstr "Kauf"
 
-#: models.py:75
+#: models.py:78
 msgid "Purchases"
 msgstr "Käufe"
 
-#: models.py:88 models.py:531
+#: models.py:91 models.py:605
 msgid "Name"
 msgstr "Name"
 
-#: models.py:92 models.py:419 models.py:558
+#: models.py:95 models.py:474 models.py:723
 msgid "Author"
 msgstr "Autor"
 
-#: models.py:93
+#: models.py:96
 msgid "Authors"
 msgstr "Autoren"
 
-#: models.py:104
+#: models.py:107
 msgid "men and women"
 msgstr "Männer und Frauen"
 
-#: models.py:105
+#: models.py:108
 msgid "men only"
 msgstr "nur Männer"
 
-#: models.py:106
+#: models.py:109
 msgid "women only"
 msgstr "nur Frauen"
 
-#: models.py:110
+#: models.py:113
 msgid "infants"
 msgstr "Säuglinge"
 
-#: models.py:111
+#: models.py:114
 msgid "children"
 msgstr "Kinder"
 
-#: models.py:112
+#: models.py:115
 msgid "teenagers"
 msgstr "Teenagers"
 
-#: models.py:113
+#: models.py:116
 msgid "adults"
 msgstr "Erwachsene"
 
-#: models.py:114
+#: models.py:117
 msgid "seniors"
 msgstr "Senioren"
 
-#: models.py:118
+#: models.py:121
 msgid "physical"
 msgstr "physisch"
 
-#: models.py:119
+#: models.py:122
 msgid "psychical"
 msgstr "psychisch"
 
-#: models.py:123
+#: models.py:126
 msgid "head / neck"
 msgstr "Kopf / Hals"
 
-#: models.py:124
+#: models.py:127
 msgid "skin"
 msgstr "Haut"
 
-#: models.py:125
+#: models.py:128
 msgid "chest / back"
 msgstr "Brustkorb / Rücken"
 
-#: models.py:126
+#: models.py:129
 msgid "stomach / bottom"
 msgstr "Bauch / Hinterteil"
 
-#: models.py:127
+#: models.py:130
 msgid "genitourinary tract"
 msgstr "Urogenitaltrakt"
 
-#: models.py:128
+#: models.py:131
 msgid "hands / legs"
 msgstr "Arme / Beine"
 
-#: models.py:132
+#: models.py:135
 msgid "hair"
 msgstr "Haar"
 
-#: models.py:133
+#: models.py:136
 msgid "brain"
 msgstr "Gehirn"
 
-#: models.py:134
+#: models.py:137
 msgid "eyes"
 msgstr "Augen"
 
-#: models.py:135
+#: models.py:138
 msgid "ears"
 msgstr "Ohren"
 
-#: models.py:136
+#: models.py:139
 msgid "mouth / nose"
 msgstr "Mund / Nase"
 
-#: models.py:137
+#: models.py:140
 msgid "neck"
 msgstr "Hals"
 
-#: models.py:145
+#: models.py:148
 msgid "Name (EN)"
 msgstr "Name (EN)"
 
-#: models.py:146
+#: models.py:149
 msgid "Name (DE)"
 msgstr "Name (DE)"
 
-#: models.py:147
+#: models.py:150
 msgid "Name (CS)"
 msgstr "Name (CS)"
 
-#: models.py:150
+#: models.py:153
 msgid "Affected sex"
 msgstr "betroffenes Geschlecht"
 
-#: models.py:157 models.py:701
+#: models.py:160 models.py:867
 msgid "Disease"
 msgstr "Gesundheitsproblem"
 
-#: models.py:158
+#: models.py:161
 msgid "Diseases"
 msgstr "Gesundheitsprobleme"
 
-#: models.py:180 models.py:728
+#: models.py:183 models.py:894
 msgid "herb"
 msgstr "Kraut"
 
-#: models.py:181
+#: models.py:184
 msgid "leaf shrub"
 msgstr "Laubstrauch"
 
-#: models.py:182
+#: models.py:185
 msgid "needle shrub"
 msgstr "Nadelstrauch"
 
-#: models.py:183
+#: models.py:186
 msgid "leaf tree"
 msgstr "Laubbaum"
 
-#: models.py:184
+#: models.py:187
 msgid "needle tree"
 msgstr "Nadelbaum"
 
-#: models.py:189
+#: models.py:192
 msgid "white"
 msgstr "weiß"
 
-#: models.py:190
+#: models.py:193
 msgid "yellow"
 msgstr "gelb"
 
-#: models.py:191
+#: models.py:194
 msgid "brown"
 msgstr "braun"
 
-#: models.py:192
+#: models.py:195
 msgid "red / pink"
 msgstr "rot / rosa"
 
-#: models.py:193
+#: models.py:196
 msgid "blue / magenta"
 msgstr "blau / lila"
 
-#: models.py:194
+#: models.py:197
 msgid "green"
 msgstr "grün"
 
-#: models.py:195 models.py:236 models.py:276
+#: models.py:198 models.py:239 models.py:279
 msgid "other"
 msgstr "andere"
 
-#: models.py:200
+#: models.py:203
 msgid "simple"
 msgstr "einfach"
 
-#: models.py:201
+#: models.py:204
 msgid "capitulum - disc or ray florets"
 msgstr "Blutenköpfchen - Scheibenblüten oder Zungenblüten"
 
-#: models.py:202
+#: models.py:205
 msgid "cyme"
 msgstr "Trugdolde"
 
-#: models.py:203
+#: models.py:206
 msgid "corymb"
 msgstr "Schirmtraube"
 
-#: models.py:204
+#: models.py:207
 msgid "dychasia"
 msgstr "Sprossverzweigung"
 
-#: models.py:205
+#: models.py:208
 msgid "umbel"
 msgstr "Dolde"
 
-#: models.py:206
+#: models.py:209
 msgid "compound umbel"
 msgstr "Doldenrispe"
 
-#: models.py:207
+#: models.py:210
 msgid "panicle"
 msgstr "Rispe"
 
-#: models.py:208
+#: models.py:211
 msgid "raceme"
 msgstr "Traube"
 
-#: models.py:209
+#: models.py:212
 msgid "spike"
 msgstr "Ähre"
 
-#: models.py:210
+#: models.py:213
 msgid "head"
 msgstr "Köpfchen"
 
-#: models.py:211
+#: models.py:214
 msgid "catkin"
 msgstr "Kätzchen"
 
-#: models.py:216
+#: models.py:219
 msgid "january"
 msgstr "Januar"
 
-#: models.py:217
+#: models.py:220
 msgid "february"
 msgstr "Februar"
 
-#: models.py:218
+#: models.py:221
 msgid "march"
 msgstr "März"
 
-#: models.py:219
+#: models.py:222
 msgid "april"
 msgstr "April"
 
-#: models.py:220
+#: models.py:223
 msgid "may"
 msgstr "Mai"
 
-#: models.py:221
+#: models.py:224
 msgid "june"
 msgstr "Juni"
 
-#: models.py:222
+#: models.py:225
 msgid "july"
 msgstr "Juli"
 
-#: models.py:223
+#: models.py:226
 msgid "august"
 msgstr "August"
 
-#: models.py:224
+#: models.py:227
 msgid "september"
 msgstr "September"
 
-#: models.py:225
+#: models.py:228
 msgid "october"
 msgstr "Oktober"
 
-#: models.py:226
+#: models.py:229
 msgid "november"
 msgstr "November"
 
-#: models.py:227
+#: models.py:230
 msgid "december"
 msgstr "Dezember"
 
-#: models.py:232 models.py:289
+#: models.py:235 models.py:292
 msgid "alternate"
 msgstr "wechselständig"
 
-#: models.py:233 models.py:290
+#: models.py:236 models.py:293
 msgid "opposite"
 msgstr "gegenständig"
 
-#: models.py:234
+#: models.py:237
 msgid "verticillate"
 msgstr "quirlförmig"
 
-#: models.py:235
+#: models.py:238
 msgid "rosette"
 msgstr "rosettig"
 
-#: models.py:241
+#: models.py:244
 msgid "entire"
 msgstr "ganzrandig"
 
-#: models.py:242
+#: models.py:245
 msgid "serrate"
 msgstr "gesägt"
 
-#: models.py:243
+#: models.py:246
 msgid "toothed"
 msgstr "gezähnt"
 
-#: models.py:244
+#: models.py:247
 msgid "lobed"
 msgstr "gelappt"
 
-#: models.py:249
+#: models.py:252
 msgid "simple unseparated"
 msgstr "ungegliedert"
 
-#: models.py:250
+#: models.py:253
 msgid "simple hand-shaped"
 msgstr "handförmig"
 
-#: models.py:251
+#: models.py:254
 msgid "simple pinnate"
 msgstr "gefiedert"
 
-#: models.py:252
+#: models.py:255
 msgid "compound hand-shaped"
 msgstr "zweifach gefiedert"
 
-#: models.py:253
+#: models.py:256
 msgid "compound imparipinnate"
 msgstr "unpaarig gefiedert"
 
-#: models.py:254
+#: models.py:257
 msgid "compound paripinnate"
 msgstr "paarig gefiedert"
 
-#: models.py:255
+#: models.py:258
 msgid "scaly (equisetaceae)"
 msgstr "schuppig (Schachtelhalmgewächse)"
 
-#: models.py:260
+#: models.py:263
 msgid "linear"
 msgstr "linealisch"
 
-#: models.py:261
+#: models.py:264
 msgid "circular"
 msgstr "kreisrund"
 
-#: models.py:262
+#: models.py:265
 msgid "oval-shaped"
 msgstr "elliptisch"
 
-#: models.py:263
+#: models.py:266
 msgid "egg-shaped"
 msgstr "eiförmig"
 
-#: models.py:264
+#: models.py:267
 msgid "teardrop-shaped"
 msgstr "verkehrt-eiförmig"
 
-#: models.py:265
+#: models.py:268
 msgid "lanceolate"
 msgstr "lanzettlich"
 
-#: models.py:266
+#: models.py:269
 msgid "wedge-shaped"
 msgstr "verkehrt-lanzettlich"
 
-#: models.py:267
+#: models.py:270
 msgid "spoon-shaped"
 msgstr "spatelförmig"
 
-#: models.py:268
+#: models.py:271
 msgid "triangular"
 msgstr "dreieckig"
 
-#: models.py:269
+#: models.py:272
 msgid "diamond-shaped"
 msgstr "rautenförmig"
 
-#: models.py:270
+#: models.py:273
 msgid "heart-shaped"
 msgstr "herzförmig"
 
-#: models.py:271
+#: models.py:274
 msgid "inverse heart-shaped"
 msgstr "verkehrt-herzförmig"
 
-#: models.py:272
+#: models.py:275
 msgid "kidney-shaped"
 msgstr "nierenförmig"
 
-#: models.py:273
+#: models.py:276
 msgid "arrow-shaped"
 msgstr "pfeilförmig"
 
-#: models.py:274
+#: models.py:277
 msgid "spear-shaped"
 msgstr "spießförmig"
 
-#: models.py:275
+#: models.py:278
 msgid "pinnatisect"
 msgstr "fiederschnittig"
 
-#: models.py:281
+#: models.py:284
 msgid "single needles"
 msgstr "Einzelnadeln"
 
-#: models.py:282
+#: models.py:285
 msgid "bundled needles"
 msgstr "Nadelgruppe"
 
-#: models.py:283
+#: models.py:286
 msgid "tufted needles"
 msgstr "Nadelbüschel"
 
-#: models.py:284
+#: models.py:287
 msgid "scales"
 msgstr "schuppige Nadeln"
 
-#: models.py:291
+#: models.py:294
 msgid "with thorns"
 msgstr "mit Dornen"
 
-#: models.py:296
+#: models.py:299
 msgid "smooth"
 msgstr "glatt"
 
-#: models.py:297
+#: models.py:300
 msgid "lenticelas"
 msgstr "Lentizellen"
 
-#: models.py:298
+#: models.py:301
 msgid "grooved"
 msgstr "geriffelt"
 
-#: models.py:299
+#: models.py:302
 msgid "scaly"
 msgstr "schuppig"
 
-#: models.py:304
+#: models.py:307
 msgid "legume"
 msgstr "Hülse"
 
-#: models.py:305
+#: models.py:308
 msgid "capsule"
 msgstr "Kapsel"
 
-#: models.py:306
+#: models.py:309
 msgid "silique"
 msgstr "Schote"
 
-#: models.py:307
+#: models.py:310
 msgid "follicle"
 msgstr "Balgfrucht"
 
-#: models.py:308
+#: models.py:311
 msgid "nut / nutlet"
 msgstr "Nuss / Klause"
 
-#: models.py:309
+#: models.py:312
 msgid "achene"
 msgstr "Achäne"
 
-#: models.py:310
+#: models.py:313
 msgid "winged achene"
 msgstr "Spaltfrucht"
 
-#: models.py:311
+#: models.py:314
 msgid "berries"
 msgstr "Beeren"
 
-#: models.py:312
+#: models.py:315
 msgid "aggregate fruits"
 msgstr "Sammelfrucht"
 
-#: models.py:313
+#: models.py:316
 msgid "drupe"
 msgstr "Steinfrucht"
 
-#: models.py:314
+#: models.py:317
 msgid "pome"
 msgstr "Apfelfrucht"
 
-#: models.py:315
+#: models.py:318
 msgid "cone"
 msgstr "Kegel"
 
-#: models.py:316
+#: models.py:319
 msgid "caryopsis"
 msgstr "Getreidefrucht"
 
-#: models.py:317
+#: models.py:320
 msgid "spore"
 msgstr "Spore"
 
-#: models.py:318
+#: models.py:321
 msgid "no fruit"
 msgstr "ohne Frucht"
 
-#: models.py:322
+#: models.py:325
 msgid "field"
 msgstr "Feld"
 
-#: models.py:323
+#: models.py:326
 msgid "grassy"
 msgstr "Wiese"
 
-#: models.py:324
+#: models.py:327
 msgid "forested"
 msgstr "Wald"
 
-#: models.py:325
+#: models.py:328
 msgid "humid"
 msgstr "Gewässer"
 
-#: models.py:326
+#: models.py:329
 msgid "urban"
 msgstr "Besiedlung"
 
-#: models.py:327
+#: models.py:330
 msgid "mountain"
 msgstr "Berge"
 
-#: models.py:331
+#: models.py:334
 msgid "antihydrotic (reduces perspiration)"
 msgstr "schweißhemmend"
 
-#: models.py:332
+#: models.py:335
 msgid "antiseptic (prevents sepsis or putrefaction)"
 msgstr "antiseptisch (keimtötend)"
 
-#: models.py:333
+#: models.py:336
 msgid "deodorant (masks smells)"
 msgstr "desodorierend (körpergeruchsbindend)"
 
-#: models.py:334
+#: models.py:337
 msgid "diaphoretic (induces perspiration)"
 msgstr "schweißtreibend"
 
-#: models.py:335
+#: models.py:338
 msgid "disinfectant (cleans wounds)"
 msgstr "wundreinigend"
 
-#: models.py:336
+#: models.py:339
 msgid "emollient (softens and moistures the skin)"
 msgstr "hautgeschmeidig"
 
-#: models.py:337
+#: models.py:340
 msgid "febrifuge (reduces fevers)"
 msgstr "fiebersenkend"
 
-#: models.py:338
+#: models.py:341
 msgid "rubefacient (produces inflammation and redness of the skin)"
 msgstr "hautreizend (erzeugt eine Rötung und Erwärmung der Haut)"
 
-#: models.py:339
+#: models.py:342
 msgid "vulnerary (promotes the healing of wounds)"
 msgstr "wundheilend"
 
-#: models.py:343
+#: models.py:346
 msgid "anaesthetic (numbs the feeling in the body)"
 msgstr "anästhetisch (betäubend)"
 
-#: models.py:344
+#: models.py:347
 msgid "analgesic (relieves pain)"
 msgstr "analgetisch (schmerzlindernd)"
 
-#: models.py:345
+#: models.py:348
 msgid "antispasmodic (relaxes muscular spasms and cramps)"
 msgstr "krampflösend (löst schmerzhafte Muskelkrämpfe)"
 
-#: models.py:346
+#: models.py:349
 msgid "astringent (produces contraction in living tissue)"
 msgstr "zusammenziehend (zieht das Gewebe zusammen)"
 
-#: models.py:347
+#: models.py:350
 msgid "nervine (stimulates and calms the nerves)"
 msgstr "nervenstillend"
 
-#: models.py:348
+#: models.py:351
 msgid "aromatherapeutic"
 msgstr "aromatherapeutisch"
 
-#: models.py:349
+#: models.py:352
 msgid "hallucinogenic"
 msgstr "halluzinogen"
 
-#: models.py:350
+#: models.py:353
 msgid "hypnotic (induces sleep)"
 msgstr "schlaffördernd"
 
-#: models.py:351
+#: models.py:354
 msgid "refrigerant (cools the body)"
 msgstr "erfrischend (hilft gegen den Durst und senkt die Körpertemperatur)"
 
-#: models.py:352
+#: models.py:355
 msgid "sedative (reduces nervousness and irritation)"
 msgstr "sedativ (beruhigend)"
 
-#: models.py:353
+#: models.py:356
 msgid "stimulant (excites or quickens activity of the physiological processes)"
 msgstr "stimulierend (regt die Wachheitsfunktionen an)"
 
-#: models.py:354
+#: models.py:357
 msgid "tonic (improves general health)"
 msgstr "tonisch (stärkt den Organismus)"
 
-#: models.py:358
+#: models.py:361
 msgid "antitussive (relieves coughing)"
 msgstr "hustenbekämpfend"
 
-#: models.py:359
+#: models.py:362
 msgid "balsamic (soothing agent)"
 msgstr "balsamisch (wirkt auf die Schleimhäute der Atemwege)"
 
-#: models.py:360
+#: models.py:363
 msgid "decongestant (removes phlegm and mucous)"
 msgstr "schleimlösend"
 
-#: models.py:361
+#: models.py:364
 msgid "expectorant (clears phlegm from the chest by inducing coughing)"
 msgstr "expektorierend (auswurffördernd)"
 
-#: models.py:362
+#: models.py:365
 msgid "pectoral (relieves respiratory diseases)"
 msgstr "atemregulierend"
 
-#: models.py:366
+#: models.py:369
 msgid "antianaemic (blood tonic)"
 msgstr "antianämisch (bekämpft die Blutarmut)"
 
-#: models.py:367
+#: models.py:370
 msgid "anticholesterolemic (prevents the build up of cholesterol)"
 msgstr "cholesterinsenkend"
 
-#: models.py:368
+#: models.py:371
 msgid "blood purifier"
 msgstr "blutreinigend"
 
-#: models.py:369
+#: models.py:372
 msgid "cardiac (used in the treatment of heart problems)"
 msgstr "herzregulierend"
 
-#: models.py:370
+#: models.py:373
 msgid "cardiotonic (stimulates blood circulation)"
 msgstr "zirkulationsfördernd (aktiviert die Blutzirkulation)"
 
-#: models.py:371
+#: models.py:374
 msgid "haemostatic (controls internal bleeding)"
 msgstr "homöostatisch (blutgerinnungsfördernd)"
 
-#: models.py:372
+#: models.py:375
 msgid "hypertensive (increases blood pressure)"
 msgstr "blutdruckerhöhend"
 
-#: models.py:373
+#: models.py:376
 msgid "hypoglycaemic (reduces the levels of sugar in the blood)"
 msgstr "antidiabetisch (blutzuckersenkend)"
 
-#: models.py:374
+#: models.py:377
 msgid "hypotensive (reduces blood pressure)"
 msgstr "blutdrucksenkend"
 
-#: models.py:375
+#: models.py:378
 msgid "vasoconstrictor (narrows the blood vessels)"
 msgstr "gefäßverengend"
 
-#: models.py:376
+#: models.py:379
 msgid "vasodilator (widens the blood vessels)"
 msgstr "gefäßerweiternd"
 
-#: models.py:380
+#: models.py:383
 msgid "antidiarrhoeal"
 msgstr "antidiarrhöisch (gegen Durchfall)"
 
-#: models.py:381
+#: models.py:384
 msgid "antiemetic (prevents vomiting)"
 msgstr "brechreizlindernd"
 
-#: models.py:382
+#: models.py:385
 msgid "appetizer (improves the appetite)"
 msgstr "appetitanregend"
 
-#: models.py:383
+#: models.py:386
 msgid "bitter (increases the appetite and stimulates digestion)"
 msgstr "bitter (fördert den Appetit und die Verdauung)"
 
-#: models.py:384
+#: models.py:387
 msgid "carminative (reduces flatulence and expels gas from the intestines)"
 msgstr "karminativ (blähungstreibend)"
 
-#: models.py:385
+#: models.py:388
 msgid "cholagogue (increases the flow of bile)"
 msgstr "gallentreibend (unterstützt die Produktion von Gallenflüssigkeit)"
 
-#: models.py:386
+#: models.py:389
 msgid "depurative (eliminates toxins and purifies the organism)"
 msgstr "entgiftend (reinigt den Organismus)"
 
-#: models.py:387
+#: models.py:390
 msgid "diuretic (promotes the flow of urine)"
 msgstr "diuretisch (harntreibend)"
 
-#: models.py:388
+#: models.py:391
 msgid "hepatic (acts on the liver)"
 msgstr "hepatisch (leberwirkend)"
 
-#: models.py:389
+#: models.py:392
 msgid "laxative (stimulates bowel movements)"
 msgstr "abführend (erleichtert den Austritt des Darminhaltes)"
 
-#: models.py:390
+#: models.py:393
 msgid "lithontripic (removes stones from kidney or bladder)"
 msgstr "gallensteinlösend"
 
-#: models.py:391
+#: models.py:394
 msgid "stomachic (improves the action of the stomach)"
 msgstr "stomachisch (verdauungsfördernd)"
 
-#: models.py:395
+#: models.py:398
 msgid "abortifacient (causes an abortion)"
 msgstr "abtreibend"
 
-#: models.py:396
+#: models.py:399
 msgid "anaphrodisiac (reduces sexual desire)"
 msgstr "anaphrodisiakisch (sexuell hemmend)"
 
-#: models.py:397
+#: models.py:400
 msgid "aphrodisiac (increases the sexual appetite)"
 msgstr "aphrodisiakisch (sexuell stimulierend)"
 
-#: models.py:398
+#: models.py:401
 msgid "contraceptive (prevents fertilization)"
 msgstr "kontrazeptiv (verhindert die Schwangerschaft)"
 
-#: models.py:399
+#: models.py:402
 msgid "emmenagogue (promotes or increases the menstrual flow)"
 msgstr "menstruationsregulierend"
 
-#: models.py:400
+#: models.py:403
 msgid "galactofuge (reduces the flow of milk in a nursing mother)"
 msgstr "milchhemmend (vermindert die Produktion von Muttermilch)"
 
-#: models.py:401
+#: models.py:404
 msgid "galactogogue (promotes the flow of milk in a nursing mother)"
 msgstr "milchtreibend (fördert die Produktion von Muttermilch)"
 
-#: models.py:402
+#: models.py:405
 msgid "uterine tonic (stimulates uterine contractions during the birth)"
 msgstr "oxytoxisch (geburtsstimulierend)"
 
-#: models.py:406
+#: models.py:409
 msgid "antibacterial"
 msgstr "antibakterielles"
 
-#: models.py:407
+#: models.py:410
 msgid "antibiotic (inhibits infections)"
 msgstr "antiinfektiös (bekämpft Infektionen)"
 
-#: models.py:408
+#: models.py:411
 msgid "antiinflammatory"
 msgstr "entzündungshemmend"
 
-#: models.py:409
+#: models.py:412
 msgid "antiviral"
 msgstr "antiviral"
 
-#: models.py:410
+#: models.py:413
 msgid "parasiticide (kills internal parasites)"
 msgstr "antiparasitär (wurmtreibend)"
 
+#: models.py:417
+msgid "Circumboreal"
+msgstr "Circumboreal"
+
 #: models.py:418
+msgid "Eastern Asiatic"
+msgstr "Eastern Asiatic"
+
+#: models.py:419
+msgid "North American Atlantic"
+msgstr "North American Atlantic"
+
+#: models.py:420
+msgid "Rocky Mountain"
+msgstr "Rocky Mountain"
+
+#: models.py:421
+msgid "Macaronesian"
+msgstr "Macaronesian"
+
+#: models.py:422
+msgid "Mediterranean"
+msgstr "Mediterranean"
+
+#: models.py:423
+msgid "Saharo-Arabian"
+msgstr "Saharo-Arabian"
+
+#: models.py:424
+msgid "Irano-Turanian"
+msgstr "Irano-Turanian"
+
+#: models.py:425
+msgid "Madrean"
+msgstr "Madrean"
+
+#: models.py:429
+msgid "Guineo-Congolian"
+msgstr "Guineo-Congolian"
+
+#: models.py:430
+msgid "Eastern African Coast"
+msgstr "Eastern African Coast"
+
+#: models.py:431
+msgid "Sudano-Zambezian"
+msgstr "Sudano-Zambezian"
+
+#: models.py:432
+msgid "Karoo-Namib"
+msgstr "Karoo-Namib"
+
+#: models.py:433
+msgid "Madagascan"
+msgstr "Madagascan"
+
+#: models.py:434
+msgid "Indian"
+msgstr "Indian"
+
+#: models.py:435
+msgid "Indochinese"
+msgstr "Indochinese"
+
+#: models.py:436
+msgid "Malesian"
+msgstr "Malesian"
+
+#: models.py:437
+msgid "Fijian"
+msgstr "Fijian"
+
+#: models.py:438
+msgid "Polynesian"
+msgstr "Polynesian"
+
+#: models.py:439
+msgid "Hawaiian"
+msgstr "Hawaiian"
+
+#: models.py:440
+msgid "Neocaledonian"
+msgstr "Neocaledonian"
+
+#: models.py:444
+msgid "Caribbean"
+msgstr "Caribbean"
+
+#: models.py:445
+msgid "Guayana Highlands"
+msgstr "Guayana Highlands"
+
+#: models.py:446
+msgid "Amazonian"
+msgstr "Amazonian"
+
+#: models.py:447
+msgid "Brazilian"
+msgstr "Brazilian"
+
+#: models.py:448
+msgid "Andean"
+msgstr "Andean"
+
+#: models.py:452
+msgid "Cape"
+msgstr "Cape"
+
+#: models.py:456
+msgid "Northeast Australian"
+msgstr "Northeast Australian"
+
+#: models.py:457
+msgid "Southwest Australian "
+msgstr "Southwest Australian "
+
+#: models.py:458
+msgid "Central Australian"
+msgstr "Central Australian"
+
+#: models.py:462
+msgid "Fernandezian"
+msgstr "Fernandezian"
+
+#: models.py:463
+msgid "Chile-Patagonian"
+msgstr "Chile-Patagonian"
+
+#: models.py:464
+msgid "South Subantarctic Islands"
+msgstr "South Subantarctic Islands"
+
+#: models.py:465
+msgid "Neozeylandic"
+msgstr "Neozeylandic"
+
+#: models.py:473
 msgid "Draft"
 msgstr "Draft"
 
-#: models.py:421
+#: models.py:476
 msgid "Latin name"
 msgstr "Lateinischer Name"
 
-#: models.py:423
+#: models.py:477
+msgid "Latin synonymes"
+msgstr "Lateinische Synonyme"
+
+#: models.py:478
+msgid "Family"
+msgstr "Familie"
+
+#: models.py:480
 msgid "Common name (EN)"
 msgstr "Name (EN)"
 
-#: models.py:424
+#: models.py:481
 msgid "Folk names (EN)"
 msgstr "Allgemeine Namen (EN)"
 
-#: models.py:425
-msgid "Family (EN)"
-msgstr "Familie (EN)"
-
-#: models.py:426
+#: models.py:482
 msgid "Description (EN)"
 msgstr "Beschreibung (EN)"
 
-#: models.py:427
+#: models.py:483
 msgid "Common name (DE)"
 msgstr "Name (DE)"
 
-#: models.py:428
+#: models.py:484
 msgid "Folk names (DE)"
 msgstr "Allgemeine Namen (DE)"
 
-#: models.py:429
-msgid "Family (DE)"
-msgstr "Familie (DE)"
-
-#: models.py:430
+#: models.py:485
 msgid "Description (DE)"
 msgstr "Name (DE)"
 
-#: models.py:431
+#: models.py:486
 msgid "Common name (CS)"
 msgstr "Name (CS)"
 
-#: models.py:432
+#: models.py:487
 msgid "Folk names (CS)"
 msgstr "Allgemeine Namen (CS)"
 
-#: models.py:433
-msgid "Family (CS)"
-msgstr "Familie (CS)"
-
-#: models.py:434
+#: models.py:488
 msgid "Description (CS)"
 msgstr "Name (CS)"
 
-#: models.py:441
+#: models.py:490
+msgid "Common name (FR)"
+msgstr "Name (FR)"
+
+#: models.py:491
+msgid "Common name (IT)"
+msgstr "Name (IT)"
+
+#: models.py:492
+msgid "Common name (ES)"
+msgstr "Name (ES)"
+
+#: models.py:493
+msgid "Common name (RU)"
+msgstr "Name (RU)"
+
+#: models.py:494
+msgid "Common name (SK)"
+msgstr "Name (SK)"
+
+#: models.py:495
+msgid "Common name (PL)"
+msgstr "Name (PL)"
+
+#: models.py:496
+msgid "Common name (TR)"
+msgstr "Name (TR)"
+
+#: models.py:497
+msgid "Common name (AR)"
+msgstr "Name (AR)"
+
+#: models.py:498
+msgid "Common name (ZH)"
+msgstr "Name (ZH)"
+
+#: models.py:504
 msgid "Is healing"
 msgstr "Ist heilkräftig"
 
-#: models.py:442
+#: models.py:505
 msgid "Is toxic"
 msgstr "Ist giftig"
 
-#: models.py:443
+#: models.py:506
 msgid "Plant type"
 msgstr "Pflanzentyp"
 
-#: models.py:444
+#: models.py:507
 msgid "Min.height (cm)"
 msgstr "Min.Höhe (cm)"
 
-#: models.py:445
+#: models.py:508
 msgid "Max.height (cm)"
 msgstr "Max.Höhe (cm)"
 
-#: models.py:447
+#: models.py:510
 msgid "Predominant flower color"
 msgstr "Blütenhauptfarbe"
 
-#: models.py:448
+#: models.py:511
 msgid "Flower type"
 msgstr "Blütentyp"
 
-#: models.py:449
+#: models.py:512
 msgid "Blooming from"
 msgstr "Blüht von"
 
-#: models.py:450
+#: models.py:513
 msgid "Blooming to"
 msgstr "Blüht bis"
 
-#: models.py:451
+#: models.py:514
 msgid "Min.petal count"
 msgstr "Min.Blütenblattanzahl"
 
-#: models.py:452
+#: models.py:515
 msgid "Max.petal count"
 msgstr "Max.Blütenblattanzahl"
 
-#: models.py:454
+#: models.py:517
 msgid "Leaf type"
 msgstr "Blatttyp"
 
-#: models.py:455
+#: models.py:518
 msgid "Leaf shape"
 msgstr "Blattform"
 
-#: models.py:456
+#: models.py:519
 msgid "Leaf shape (alt.)"
 msgstr "Blattform (alt.)"
 
-#: models.py:457
+#: models.py:520
 msgid "Leaf edge"
 msgstr "Blattrand"
 
-#: models.py:458
+#: models.py:521
 msgid "Leaf edge (alt.)"
 msgstr "Blattrand (alt.)"
 
-#: models.py:459
+#: models.py:522
 msgid "Leaf arrangement"
 msgstr "Blattstand"
 
-#: models.py:460
+#: models.py:523
 msgid "Leaf arrangement (alt.)"
 msgstr "Blattstand (alt.)"
 
-#: models.py:462
+#: models.py:525
 msgid "Needle type"
 msgstr "Nadeltyp"
 
-#: models.py:463
+#: models.py:526
 msgid "Ast branching"
 msgstr "Verzweigung"
 
-#: models.py:464
+#: models.py:527
 msgid "Bark type"
 msgstr "Borkentyp"
 
-#: models.py:465
+#: models.py:528
 msgid "Bark type (alt.)"
 msgstr "Borkentyp (alt.)"
 
-#: models.py:467
+#: models.py:530
 msgid "Fruit type"
 msgstr "Fruchttyp"
 
-#: models.py:468
+#: models.py:531
 msgid "Fruit from"
 msgstr "Frucht von"
 
-#: models.py:469
+#: models.py:532
 msgid "Fruit to"
 msgstr "Frucht bis"
 
-#: models.py:482 models.py:559 models.py:700 models.py:736
+#: models.py:553 models.py:724 models.py:866 models.py:902
 msgid "Herb"
 msgstr "Kraut"
 
-#: models.py:483
+#: models.py:554
 msgid "Herbs"
 msgstr "Kräuter"
 
-#: models.py:500
+#: models.py:571
 msgid "Pictures"
 msgstr "Bilder"
 
-#: models.py:560
+#: models.py:725
 msgid "Filename"
 msgstr "Dateiname"
 
-#: models.py:565
+#: models.py:730
 msgid "Herb picture"
 msgstr "Kräuterbild"
 
-#: models.py:566
+#: models.py:731
 msgid "Herb pictures"
 msgstr "Kräuterbilder"
 
-#: models.py:586
+#: models.py:751
 msgid "Thumbnail"
 msgstr "Thumbnail"
 
-#: models.py:680
+#: models.py:845
 msgid "tea"
 msgstr "Tee"
 
-#: models.py:681
+#: models.py:846
 msgid "inhalation"
 msgstr "Inhalation"
 
-#: models.py:682
+#: models.py:847
 msgid "gargle"
 msgstr "Gurgeln"
 
-#: models.py:683
+#: models.py:848
 msgid "bath"
 msgstr "Bad"
 
-#: models.py:684
+#: models.py:849
 msgid "ointment"
 msgstr "Salbe"
 
-#: models.py:685
+#: models.py:850
 msgid "honey"
 msgstr "Honig"
 
-#: models.py:686
+#: models.py:851
 msgid "poultice"
 msgstr "Umschlag"
 
-#: models.py:687
+#: models.py:852
 msgid "oil"
 msgstr "Öl"
 
-#: models.py:688
+#: models.py:853
 msgid "powder"
 msgstr "Pulver"
 
-#: models.py:689
+#: models.py:854
 msgid "syrup"
 msgstr "Sirup"
 
-#: models.py:690
+#: models.py:855
 msgid "liquere"
 msgstr "Likör"
 
-#: models.py:691
+#: models.py:856
 msgid "juice"
 msgstr "Saft"
 
-#: models.py:692
+#: models.py:857
 msgid "tincture"
 msgstr "Tinktur"
 
-#: models.py:693
+#: models.py:858
 msgid "jam"
 msgstr "Konfitüre"
 
-#: models.py:694
+#: models.py:859
 msgid "chewing"
 msgstr "Kauen"
 
-#: models.py:702
+#: models.py:860
+msgid "meal"
+msgstr "Speise"
+
+#: models.py:868
 msgid "Usage"
 msgstr "Gebrauch"
 
-#: models.py:704 models.py:741
+#: models.py:870 models.py:907
 msgid "Note (EN)"
 msgstr "Notiz (EN)"
 
-#: models.py:705 models.py:742
+#: models.py:871 models.py:908
 msgid "Note (DE)"
 msgstr "Notiz (DE)"
 
-#: models.py:706 models.py:743
+#: models.py:872 models.py:909
 msgid "Note (CS)"
 msgstr "Notiz (CS)"
 
-#: models.py:710
+#: models.py:876
 msgid "Herb usage"
 msgstr "Kräutergebrauch"
 
-#: models.py:711
+#: models.py:877
 msgid "Herb usages"
 msgstr "Kräutergebrauch"
 
-#: models.py:723
+#: models.py:889
 msgid "root"
 msgstr "Wurzel"
 
-#: models.py:724
+#: models.py:890
 msgid "bark"
 msgstr "Rinde"
 
-#: models.py:725
+#: models.py:891
 msgid "flower"
 msgstr "Blüte"
 
-#: models.py:726
+#: models.py:892
 msgid "leaf"
 msgstr "Blatt"
 
-#: models.py:727
+#: models.py:893
 msgid "needle"
 msgstr "Nadel"
 
-#: models.py:729
+#: models.py:895
 msgid "fruit"
 msgstr "Frucht"
 
-#: models.py:730
+#: models.py:896
 msgid "resin"
 msgstr "Harz"
 
-#: models.py:737
+#: models.py:903
 msgid "Part"
 msgstr "Teil"
 
-#: models.py:738
+#: models.py:904
 msgid "Pick from"
 msgstr "Sammeln von"
 
-#: models.py:739
+#: models.py:905
 msgid "Pick to"
 msgstr "Sammeln bis"
 
-#: models.py:747
+#: models.py:913
 msgid "Herb pick"
 msgstr "Kräutersammeln"
 
-#: models.py:748
+#: models.py:914
 msgid "Herb picks"
 msgstr "Kräutersammeln"
+
+#~ msgid "Family (DE)"
+#~ msgstr "Familie (DE)"
+
+#~ msgid "Family (CS)"
+#~ msgstr "Familie (CS)"
 
 #~ msgid "family_en"
 #~ msgstr "family_de"
