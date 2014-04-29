@@ -79,7 +79,7 @@ def fetch_from_region_data(botanical_names, region_data):
     # search in region data cache
     if any(region_data_cache):
         for bn in botanical_names:
-            herbname = bn.lower()
+            herbname = bn.lower().strip()
             for key, herbnames in region_data_cache.items():
                 if herbname in herbnames:
                     (region, index) = key.split("_")
