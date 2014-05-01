@@ -134,6 +134,7 @@ class HerbForm(ModelForm):
 
     def __init__(self, *args, **kwargs):
         super(HerbForm, self).__init__(*args, **kwargs)
+        self.fields['synonyms'].widget.attrs.update({'class' : 'vLargeTextField'})
         self.fields['alias_en'].widget.attrs.update({'class' : 'vLargeTextField'})
         self.fields['alias_de'].widget.attrs.update({'class' : 'vLargeTextField'})
         self.fields['alias_cs'].widget.attrs.update({'class' : 'vLargeTextField'})

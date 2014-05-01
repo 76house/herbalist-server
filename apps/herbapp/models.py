@@ -614,9 +614,6 @@ class Herb(models.Model):
 
     def save(self):
 
-        if not self._id:
-            return
-
         # botanical name already inserted and the fanily not yet?
         if self.botanical_name != "" and self.family == "":
             # enrich the record with additional data (family, translated names, distribution)
