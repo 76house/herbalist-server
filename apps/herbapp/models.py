@@ -322,7 +322,7 @@ FRUIT_CHOICES = (
 )
 
 ENVIRONMENT_CHOICES = (
-    (1, _('field')),
+    (1, _('dry')),
     (2, _('grassy')),
     (3, _('forested')),
     (4, _('humid')),
