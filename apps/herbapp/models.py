@@ -454,7 +454,7 @@ REGION_SOUTHAFRICAN_CHOICES = (
 
 REGION_AUSTRALIAN_CHOICES = (
     (1, _('Northeast Australian')),
-    (2, _('Southwest Australian ')),
+    (2, _('Southwest Australian')),
     (3, _('Central Australian')),
 )
 

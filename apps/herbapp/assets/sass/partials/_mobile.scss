@@ -1,0 +1,21 @@
+/* Mobile Layout: 320px.
+ * Gutters: 24px.
+ * Outer margins: 34px.
+ * Inherits styles from: Default Layout.  */
+
+@media only screen and (max-width: 767px)
+{
+  $carabana-logo-small-height: 190px;
+
+  #{$less-grid-element}
+  {
+    @include grid(4);
+
+    article
+    {
+      .phone { @include section(4, $col-width / 2, 0, false); text-align: right; }
+      .app { @include section(4, 0, 0, true); margin-top: 1em; }
+    }
+  }
+}
+

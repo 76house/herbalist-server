@@ -1,0 +1,18 @@
+/* Tablet Layout: 768px.
+ * Gutters: 24px.
+ * Outer margins: 28px.
+ * Inherits styles from: Default Layout.  */
+
+@media only screen and (min-width: 768px) and (max-width: 991px)
+{
+  #{$less-grid-element}
+  {
+    @include grid(8);
+    
+    article
+    {
+      .phone { @include section(3.5, 0, 0, false); }
+      .app { @include section(4.5, 0, 0, true); }
+    }
+  }
+}

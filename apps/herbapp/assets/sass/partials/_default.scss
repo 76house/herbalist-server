@@ -1,0 +1,61 @@
+/* Default Layout: 992px.
+ * Gutters: 24px.
+ * Outer margins: 48px.
+ * Leftover space for scrollbars @1024px: 32px.  */
+
+
+@import "compass/css3/background-size";
+@import "compass/typography/text/replacement";
+
+
+#{$less-grid-element} { @include grid(10); }
+
+
+/* --- background */
+
+body { background: $color-background; }
+
+/* --- header */
+
+header
+{
+  width: 100%; min-width: 100%; height: 32px; background: $color-background url('#{$mediapath}/img/top.jpg') top center repeat-x;
+}
+
+
+/* --- article */
+
+article
+{
+  .phone
+  {
+    @include section(5, $col-width, $col-width, false); float: left; margin: 94px auto 2em auto;
+    .case { display: block; width: 300px; height: 530px; background: $color-background url('#{$mediapath}/img/phone-case.png') no-repeat; }
+    .sss { position: relative; display: block; overflow: hidden; left: 23px; top: 60px; width: 240px; height: 400px;
+      .ssslide { width: 100%; position: absolute; top: 0; left: 0; display: none; overflow: hidden;
+        img { max-width: 100%; height: auto; position: relative; display: block; }
+      }
+    }
+  }
+  .app
+  {
+    @include section(5, $col-padding, 2 * $col-padding, true);
+    float: left; clear: top; margin: 104px auto 2em auto; font-size: 0.86em; text-align: center;
+    
+    .logo { width: 368px; height: 82px; background: url('#{$mediapath}/img/herbalist-logo.png') no-repeat; background-size: 368px 82px; }
+    .claim { color: $color-title; font-weight: bold; letter-spacing: 0.02em; margin: 1em auto 2em auto; }
+    .wps-badge {
+      a { margin: 2.5em auto 2em auto; display: block; width: 258px; height: 67px; background: url('#{$mediapath}/img/wps-badge-en.png') no-repeat; background-size: 258px 67px; }
+    }
+    .social-buttons { margin: 0 auto; width: 160px;
+       .fb { float: left; display: block; width: 100px; }
+       .tw { float: left; display: block; width: 60px; }
+     }
+    .footer { color: $color-footer; clear: both; }
+    p { margin-bottom: 1em;
+      span { color: $color-link; }
+    }
+  }
+}
+
+
