@@ -19,7 +19,7 @@ body { background: $color-background; }
 
 header
 {
-  width: 100%; min-width: 100%; height: 32px; background: $color-background url('#{$mediapath}/img/top.jpg') top center repeat-x;
+  width: 100%; min-width: 100%; height: 65px; background: $color-background url('#{$mediapath}/img/top.jpg') top center repeat-x; background-size: 1078px 65px;
 }
 
 
@@ -42,7 +42,7 @@ article
     @include section(5, $col-padding, 2 * $col-padding, true);
     float: left; clear: top; margin: 104px auto 2em auto; font-size: 0.86em; text-align: center;
     
-    .logo { width: 368px; height: 82px; background: url('#{$mediapath}/img/herbalist-logo.png') no-repeat; background-size: 368px 82px; }
+    .logo { clear: both; width: 368px; height: 82px; background: url('#{$mediapath}/img/herbalist-logo.png') no-repeat; background-size: 368px 82px; }
     .claim { color: $color-title; font-weight: bold; letter-spacing: 0.02em; margin: 1em auto 2em auto; }
     .wps-badge {
       a { margin: 2.5em auto 2em auto; display: block; width: 258px; height: 67px; background: url('#{$mediapath}/img/wps-badge-en.png') no-repeat; background-size: 258px 67px; }

@@ -63,7 +63,7 @@ section { position: relative; width: 100%; min-width: 100%; display: block; over
 body { background: #fcf9d3; }
 
 /* --- header */
-header { width: 100%; min-width: 100%; height: 32px; background: #fcf9d3 url("../img/top.jpg") top center repeat-x; }
+header { width: 100%; min-width: 100%; height: 65px; background: #fcf9d3 url("../img/top.jpg") top center repeat-x; background-size: 1078px 65px; }
 
 /* --- article */
 article .phone { width: 300px; padding-left: 68px; padding-right: 68px; margin-right: 24px; float: left; margin: 94px auto 2em auto; }
@@ -72,7 +72,7 @@ article .phone .sss { position: relative; display: block; overflow: hidden; left
 article .phone .sss .ssslide { width: 100%; position: absolute; top: 0; left: 0; display: none; overflow: hidden; }
 article .phone .sss .ssslide img { max-width: 100%; height: auto; position: relative; display: block; }
 article .app { width: 364px; padding-left: 24px; padding-right: 48px; float: left; clear: top; margin: 104px auto 2em auto; font-size: 0.86em; text-align: center; }
-article .app .logo { width: 368px; height: 82px; background: url("../img/herbalist-logo.png") no-repeat; background-size: 368px 82px; }
+article .app .logo { clear: both; width: 368px; height: 82px; background: url("../img/herbalist-logo.png") no-repeat; background-size: 368px 82px; }
 article .app .claim { color: #668822; font-weight: bold; letter-spacing: 0.02em; margin: 1em auto 2em auto; }
 article .app .wps-badge a { margin: 2.5em auto 2em auto; display: block; width: 258px; height: 67px; background: url("../img/wps-badge-en.png") no-repeat; background-size: 258px 67px; }
 article .app .social-buttons { margin: 0 auto; width: 160px; }
